@@ -1,0 +1,152 @@
+[
+  {
+    "id": "plt-spelling",
+    "scenario": "typo",
+    "question": "platlets help stop bleading how?",
+    "expectedChunkIds": [
+      "medlineplus-platelet-tests-b5307d826bca3ac7d41ad126",
+      "medlineplus-complete-blood-count-cbc-a985ba8dc87f113db2037fd3"
+    ],
+    "evidence": "Platelets help form clots that stop bleeding."
+  },
+  {
+    "id": "rdw-transposed",
+    "scenario": "typo",
+    "question": "What does RWD measure on a blood test?",
+    "expectedChunkIds": [
+      "medlineplus-rdw-red-cell-distribution-width-d241b0c88ccd1ed0146b6a0f",
+      "medlineplus-rdw-red-cell-distribution-width-69f4a626fe0081013b5e519b"
+    ],
+    "evidence": "RDW measures variation in red-cell size or volume."
+  },
+  {
+    "id": "hct-spelling",
+    "scenario": "typo",
+    "question": "is hemotacrit a percent or a cell count",
+    "expectedChunkIds": [
+      "medlineplus-hematocrit-test-099c5b5e70ad54a660acf4bf",
+      "medlineplus-hematocrit-test-1f233ee6f51062940910f424",
+      "medlineplus-complete-blood-count-cbc-a985ba8dc87f113db2037fd3"
+    ],
+    "evidence": "Hematocrit is the percentage of blood made up of red cells."
+  },
+  {
+    "id": "hb-spelling",
+    "scenario": "typo",
+    "question": "hemaglobin vs a1c is it the same thing",
+    "expectedChunkIds": [
+      "medlineplus-hemoglobin-test-f5b85db924aa18e136ebd15d"
+    ],
+    "evidence": "The hemoglobin test and HbA1c are explicitly distinguished."
+  },
+  {
+    "id": "diff-spelling",
+    "scenario": "typo",
+    "question": "does a white cell differntial break down each type",
+    "expectedChunkIds": [
+      "medlineplus-blood-differential-78f0c88f4bd71fe4f58b61f8",
+      "medlineplus-blood-differential-2293d886dbb645767ad1789f",
+      "medlineplus-white-blood-count-wbc-684a1271c545da98fc1caaac",
+      "medlineplus-complete-blood-count-cbc-a985ba8dc87f113db2037fd3"
+    ],
+    "evidence": "A differential measures each white-cell type separately."
+  },
+  {
+    "id": "rdw-mix",
+    "scenario": "english-roman-urdu",
+    "question": "report pe RDW ke aagay % likha hai, yeh percentage kis cheez ki hai?",
+    "expectedChunkIds": [
+      "medlineplus-rdw-red-cell-distribution-width-69f4a626fe0081013b5e519b"
+    ],
+    "evidence": "The RDW results passage connects the percentage format to variation in red-cell size and volume."
+  },
+  {
+    "id": "range-mix",
+    "scenario": "english-roman-urdu",
+    "question": "normal range google wali dekhun ya jo report pe print hai?",
+    "expectedChunkIds": [
+      "medlineplus-how-to-understand-your-lab-results-7ce5fe9052c170f5a4ce9912"
+    ],
+    "evidence": "Use the range printed on the lab report."
+  },
+  {
+    "id": "platelet-prep-mix",
+    "scenario": "english-roman-urdu",
+    "question": "sirf platelet count hai, koi special tayari karni hoti hai?",
+    "expectedChunkIds": [
+      "medlineplus-platelet-tests-6cdac665257b0ea6a48a7fdc"
+    ],
+    "evidence": "The platelet count preparation passage addresses preparation specifically."
+  },
+  {
+    "id": "cbc-prep-mix",
+    "scenario": "english-roman-urdu",
+    "question": "CBC ke saath aur tests bhi hain, fasting wali baat kis pe depend karti hai?",
+    "expectedChunkIds": [
+      "medlineplus-complete-blood-count-cbc-0b06e52b817839e2e6991c01"
+    ],
+    "evidence": "The CBC preparation passage says other tests may require fasting and the provider gives instructions."
+  },
+  {
+    "id": "mcv-mix",
+    "scenario": "english-roman-urdu",
+    "question": "MCV mein cells gin rahe hain ya average size dekh rahe hain?",
+    "expectedChunkIds": [
+      "medlineplus-mcv-mean-corpuscular-volume-25d79eb158abfc89365f848f",
+      "medlineplus-complete-blood-count-cbc-a985ba8dc87f113db2037fd3",
+      "medlineplus-complete-blood-count-cbc-12265eb015829f98de232c5c"
+    ],
+    "evidence": "MCV measures the average size of red blood cells."
+  },
+  {
+    "id": "hct-percent",
+    "scenario": "short-or-paraphrased",
+    "question": "why is HCT a %?",
+    "expectedChunkIds": [
+      "medlineplus-hematocrit-test-099c5b5e70ad54a660acf4bf",
+      "medlineplus-hematocrit-test-1f233ee6f51062940910f424",
+      "medlineplus-complete-blood-count-cbc-a985ba8dc87f113db2037fd3"
+    ],
+    "evidence": "Hematocrit measures the fraction of blood made up of red blood cells."
+  },
+  {
+    "id": "rbc-alias",
+    "scenario": "short-or-paraphrased",
+    "question": "erythrocyte count counts what exactly",
+    "expectedChunkIds": [
+      "medlineplus-red-blood-cell-rbc-count-aa49e197fefab5beefd30c76",
+      "medlineplus-complete-blood-count-cbc-a985ba8dc87f113db2037fd3"
+    ],
+    "evidence": "RBC count measures the number of red cells, also called erythrocytes."
+  },
+  {
+    "id": "diff-paraphrase",
+    "scenario": "short-or-paraphrased",
+    "question": "which test splits the infection-fighting cells into types instead of one total?",
+    "expectedChunkIds": [
+      "medlineplus-blood-differential-2293d886dbb645767ad1789f",
+      "medlineplus-blood-differential-78f0c88f4bd71fe4f58b61f8",
+      "medlineplus-white-blood-count-wbc-684a1271c545da98fc1caaac",
+      "medlineplus-complete-blood-count-cbc-a985ba8dc87f113db2037fd3"
+    ],
+    "evidence": "The differential measures the types separately from the total white-cell count."
+  },
+  {
+    "id": "wbc-limit",
+    "scenario": "short-or-paraphrased",
+    "question": "can the white cell count tell me the diagnosis on its own",
+    "expectedChunkIds": [
+      "medlineplus-white-blood-count-wbc-7daf1358673d3cc20099530b"
+    ],
+    "evidence": "The WBC uses passage explicitly addresses whether the count can confirm a diagnosis."
+  },
+  {
+    "id": "hb-alias",
+    "scenario": "short-or-paraphrased",
+    "question": "Hgb on my CBC, what exactly does it measure?",
+    "expectedChunkIds": [
+      "medlineplus-hemoglobin-test-0eedfa1d321ecbc624cf40da"
+    ],
+    "evidence": "The hemoglobin test measures the blood level of hemoglobin and lists Hgb as an alias."
+  }
+]

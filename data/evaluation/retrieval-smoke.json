@@ -1,0 +1,148 @@
+{
+  "checkedAt": "2026-11-09T12:34:46.586Z",
+  "embeddingModel": "text-embedding-3-small",
+  "dimensions": 1536,
+  "scope": "Six hand-selected retrieval smoke tests. Not a clinical, answer-quality or general retrieval benchmark.",
+  "passed": 6,
+  "total": 6,
+  "results": [
+    {
+      "question": "What does a white blood cell count measure?",
+      "expected": "medlineplus-white-blood-count-wbc",
+      "expectedSourceRank": 1,
+      "passed": true,
+      "matches": [
+        {
+          "sourceId": "medlineplus-white-blood-count-wbc",
+          "section": "What is a white blood count (WBC)?",
+          "similarity": 0.756457349064184
+        },
+        {
+          "sourceId": "medlineplus-white-blood-count-wbc",
+          "section": "What is it used for?",
+          "similarity": 0.654815643112327
+        },
+        {
+          "sourceId": "medlineplus-blood-differential",
+          "section": "What is a blood differential test?",
+          "similarity": 0.587804053916802
+        }
+      ]
+    },
+    {
+      "question": "What does MCV measure?",
+      "expected": "medlineplus-mcv-mean-corpuscular-volume",
+      "expectedSourceRank": 1,
+      "passed": true,
+      "matches": [
+        {
+          "sourceId": "medlineplus-mcv-mean-corpuscular-volume",
+          "section": "What is an MCV blood test?",
+          "similarity": 0.742188769326997
+        },
+        {
+          "sourceId": "medlineplus-mcv-mean-corpuscular-volume",
+          "section": "What do the results mean?",
+          "similarity": 0.707841023202518
+        },
+        {
+          "sourceId": "medlineplus-mcv-mean-corpuscular-volume",
+          "section": "Is there anything else I need to know about an MCV blood test?",
+          "similarity": 0.69990814134304
+        }
+      ]
+    },
+    {
+      "question": "Is a hemoglobin test the same as an HbA1c test?",
+      "expected": "medlineplus-hemoglobin-test",
+      "expectedSourceRank": 1,
+      "passed": true,
+      "matches": [
+        {
+          "sourceId": "medlineplus-hemoglobin-test",
+          "section": "What is it used for?",
+          "similarity": 0.60579744277134
+        },
+        {
+          "sourceId": "medlineplus-hemoglobin-test",
+          "section": "What is a Hemoglobin Test?",
+          "similarity": 0.564820151947192
+        },
+        {
+          "sourceId": "medlineplus-hematocrit-test",
+          "section": "What is a hematocrit test?",
+          "similarity": 0.462236777913128
+        }
+      ]
+    },
+    {
+      "question": "Platelets khoon mein kya kaam kartay hain?",
+      "expected": "medlineplus-platelet-tests",
+      "expectedSourceRank": 1,
+      "passed": true,
+      "matches": [
+        {
+          "sourceId": "medlineplus-platelet-tests",
+          "section": "What are platelet tests?",
+          "similarity": 0.523488927698495
+        },
+        {
+          "sourceId": "medlineplus-platelet-tests",
+          "section": "Will I need to do anything to prepare for the test?",
+          "similarity": 0.399695153496977
+        },
+        {
+          "sourceId": "medlineplus-hematocrit-test",
+          "section": "What is a hematocrit test?",
+          "similarity": 0.264182120982667
+        }
+      ]
+    },
+    {
+      "question": "WBC ka matlab kya hai aur yeh test kya measure karta hai?",
+      "expected": "medlineplus-white-blood-count-wbc",
+      "expectedSourceRank": 1,
+      "passed": true,
+      "matches": [
+        {
+          "sourceId": "medlineplus-white-blood-count-wbc",
+          "section": "What is a white blood count (WBC)?",
+          "similarity": 0.579555013823661
+        },
+        {
+          "sourceId": "medlineplus-white-blood-count-wbc",
+          "section": "What is it used for?",
+          "similarity": 0.561442662474597
+        },
+        {
+          "sourceId": "medlineplus-blood-differential",
+          "section": "What is a blood differential test?",
+          "similarity": 0.492818154739435
+        }
+      ]
+    },
+    {
+      "question": "Which reference range should I use to understand my lab result?",
+      "expected": "medlineplus-how-to-understand-your-lab-results",
+      "expectedSourceRank": 1,
+      "passed": true,
+      "matches": [
+        {
+          "sourceId": "medlineplus-how-to-understand-your-lab-results",
+          "section": "What is a reference range?",
+          "similarity": 0.745137263127041
+        },
+        {
+          "sourceId": "medlineplus-how-to-understand-your-lab-results",
+          "section": "What is a reference range?",
+          "similarity": 0.700129519399154
+        },
+        {
+          "sourceId": "medlineplus-rdw-red-cell-distribution-width",
+          "section": "What do the results mean?",
+          "similarity": 0.506758339770044
+        }
+      ]
+    }
+  ]
+}

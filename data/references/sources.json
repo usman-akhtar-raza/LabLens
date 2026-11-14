@@ -1,0 +1,240 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": "medlineplus-complete-blood-count-cbc",
+      "title": "Complete Blood Count (CBC)",
+      "sourceUrl": "https://medlineplus.gov/lab-tests/complete-blood-count-cbc/",
+      "publisher": "MedlinePlus, National Library of Medicine",
+      "language": "en",
+      "accessedOn": "2026-11-07",
+      "publisherUpdatedOn": null,
+      "clinicalReviewStatus": "not_clinician_reviewed",
+      "contentMode": "selected_verbatim_excerpts",
+      "contentPath": "documents/complete-blood-count-cbc.md",
+      "topics": [
+        "CBC",
+        "full blood count"
+      ],
+      "attribution": "Source: MedlinePlus, National Library of Medicine.",
+      "reuse": {
+        "status": "public_domain_us_government",
+        "policyUrl": "https://medlineplus.gov/about/using/usingcontent/",
+        "checkedOn": "2026-11-07",
+        "scope": "Medical-test text only; no images, encyclopedia, drug monographs, or linked third-party content."
+      }
+    },
+    {
+      "id": "medlineplus-red-blood-cell-rbc-count",
+      "title": "Red Blood Cell (RBC) Count",
+      "sourceUrl": "https://medlineplus.gov/lab-tests/red-blood-cell-rbc-count/",
+      "publisher": "MedlinePlus, National Library of Medicine",
+      "language": "en",
+      "accessedOn": "2026-11-07",
+      "publisherUpdatedOn": null,
+      "clinicalReviewStatus": "not_clinician_reviewed",
+      "contentMode": "selected_verbatim_excerpts",
+      "contentPath": "documents/red-blood-cell-rbc-count.md",
+      "topics": [
+        "RBC",
+        "erythrocytes"
+      ],
+      "attribution": "Source: MedlinePlus, National Library of Medicine.",
+      "reuse": {
+        "status": "public_domain_us_government",
+        "policyUrl": "https://medlineplus.gov/about/using/usingcontent/",
+        "checkedOn": "2026-11-07",
+        "scope": "Medical-test text only; no images, encyclopedia, drug monographs, or linked third-party content."
+      }
+    },
+    {
+      "id": "medlineplus-white-blood-count-wbc",
+      "title": "White Blood Count (WBC)",
+      "sourceUrl": "https://medlineplus.gov/lab-tests/white-blood-count-wbc/",
+      "publisher": "MedlinePlus, National Library of Medicine",
+      "language": "en",
+      "accessedOn": "2026-11-07",
+      "publisherUpdatedOn": null,
+      "clinicalReviewStatus": "not_clinician_reviewed",
+      "contentMode": "selected_verbatim_excerpts",
+      "contentPath": "documents/white-blood-count-wbc.md",
+      "topics": [
+        "WBC",
+        "leukocytes"
+      ],
+      "attribution": "Source: MedlinePlus, National Library of Medicine.",
+      "reuse": {
+        "status": "public_domain_us_government",
+        "policyUrl": "https://medlineplus.gov/about/using/usingcontent/",
+        "checkedOn": "2026-11-07",
+        "scope": "Medical-test text only; no images, encyclopedia, drug monographs, or linked third-party content."
+      }
+    },
+    {
+      "id": "medlineplus-hemoglobin-test",
+      "title": "Hemoglobin Test",
+      "sourceUrl": "https://medlineplus.gov/lab-tests/hemoglobin-test/",
+      "publisher": "MedlinePlus, National Library of Medicine",
+      "language": "en",
+      "accessedOn": "2026-11-07",
+      "publisherUpdatedOn": null,
+      "clinicalReviewStatus": "not_clinician_reviewed",
+      "contentMode": "selected_verbatim_excerpts",
+      "contentPath": "documents/hemoglobin-test.md",
+      "topics": [
+        "hemoglobin",
+        "Hb",
+        "Hgb"
+      ],
+      "attribution": "Source: MedlinePlus, National Library of Medicine.",
+      "reuse": {
+        "status": "public_domain_us_government",
+        "policyUrl": "https://medlineplus.gov/about/using/usingcontent/",
+        "checkedOn": "2026-11-07",
+        "scope": "Medical-test text only; no images, encyclopedia, drug monographs, or linked third-party content."
+      }
+    },
+    {
+      "id": "medlineplus-hematocrit-test",
+      "title": "Hematocrit Test",
+      "sourceUrl": "https://medlineplus.gov/lab-tests/hematocrit-test/",
+      "publisher": "MedlinePlus, National Library of Medicine",
+      "language": "en",
+      "accessedOn": "2026-11-07",
+      "publisherUpdatedOn": null,
+      "clinicalReviewStatus": "not_clinician_reviewed",
+      "contentMode": "selected_verbatim_excerpts",
+      "contentPath": "documents/hematocrit-test.md",
+      "topics": [
+        "hematocrit",
+        "HCT",
+        "PCV"
+      ],
+      "attribution": "Source: MedlinePlus, National Library of Medicine.",
+      "reuse": {
+        "status": "public_domain_us_government",
+        "policyUrl": "https://medlineplus.gov/about/using/usingcontent/",
+        "checkedOn": "2026-11-07",
+        "scope": "Medical-test text only; no images, encyclopedia, drug monographs, or linked third-party content."
+      }
+    },
+    {
+      "id": "medlineplus-platelet-tests",
+      "title": "Platelet Tests",
+      "sourceUrl": "https://medlineplus.gov/lab-tests/platelet-tests/",
+      "publisher": "MedlinePlus, National Library of Medicine",
+      "language": "en",
+      "accessedOn": "2026-11-07",
+      "publisherUpdatedOn": null,
+      "clinicalReviewStatus": "not_clinician_reviewed",
+      "contentMode": "selected_verbatim_excerpts",
+      "contentPath": "documents/platelet-tests.md",
+      "topics": [
+        "platelets",
+        "PLT",
+        "thrombocytes"
+      ],
+      "attribution": "Source: MedlinePlus, National Library of Medicine.",
+      "reuse": {
+        "status": "public_domain_us_government",
+        "policyUrl": "https://medlineplus.gov/about/using/usingcontent/",
+        "checkedOn": "2026-11-07",
+        "scope": "Medical-test text only; no images, encyclopedia, drug monographs, or linked third-party content."
+      }
+    },
+    {
+      "id": "medlineplus-mcv-mean-corpuscular-volume",
+      "title": "MCV (Mean Corpuscular Volume)",
+      "sourceUrl": "https://medlineplus.gov/lab-tests/mcv-mean-corpuscular-volume/",
+      "publisher": "MedlinePlus, National Library of Medicine",
+      "language": "en",
+      "accessedOn": "2026-11-07",
+      "publisherUpdatedOn": null,
+      "clinicalReviewStatus": "not_clinician_reviewed",
+      "contentMode": "selected_verbatim_excerpts",
+      "contentPath": "documents/mcv-mean-corpuscular-volume.md",
+      "topics": [
+        "MCV",
+        "red cell size"
+      ],
+      "attribution": "Source: MedlinePlus, National Library of Medicine.",
+      "reuse": {
+        "status": "public_domain_us_government",
+        "policyUrl": "https://medlineplus.gov/about/using/usingcontent/",
+        "checkedOn": "2026-11-07",
+        "scope": "Medical-test text only; no images, encyclopedia, drug monographs, or linked third-party content."
+      }
+    },
+    {
+      "id": "medlineplus-rdw-red-cell-distribution-width",
+      "title": "RDW (Red Cell Distribution Width)",
+      "sourceUrl": "https://medlineplus.gov/lab-tests/rdw-red-cell-distribution-width/",
+      "publisher": "MedlinePlus, National Library of Medicine",
+      "language": "en",
+      "accessedOn": "2026-11-07",
+      "publisherUpdatedOn": null,
+      "clinicalReviewStatus": "not_clinician_reviewed",
+      "contentMode": "selected_verbatim_excerpts",
+      "contentPath": "documents/rdw-red-cell-distribution-width.md",
+      "topics": [
+        "RDW",
+        "red cell size variation"
+      ],
+      "attribution": "Source: MedlinePlus, National Library of Medicine.",
+      "reuse": {
+        "status": "public_domain_us_government",
+        "policyUrl": "https://medlineplus.gov/about/using/usingcontent/",
+        "checkedOn": "2026-11-07",
+        "scope": "Medical-test text only; no images, encyclopedia, drug monographs, or linked third-party content."
+      }
+    },
+    {
+      "id": "medlineplus-blood-differential",
+      "title": "Blood Differential",
+      "sourceUrl": "https://medlineplus.gov/lab-tests/blood-differential/",
+      "publisher": "MedlinePlus, National Library of Medicine",
+      "language": "en",
+      "accessedOn": "2026-11-07",
+      "publisherUpdatedOn": null,
+      "clinicalReviewStatus": "not_clinician_reviewed",
+      "contentMode": "selected_verbatim_excerpts",
+      "contentPath": "documents/blood-differential.md",
+      "topics": [
+        "CBC with differential",
+        "neutrophils",
+        "lymphocytes"
+      ],
+      "attribution": "Source: MedlinePlus, National Library of Medicine.",
+      "reuse": {
+        "status": "public_domain_us_government",
+        "policyUrl": "https://medlineplus.gov/about/using/usingcontent/",
+        "checkedOn": "2026-11-07",
+        "scope": "Medical-test text only; no images, encyclopedia, drug monographs, or linked third-party content."
+      }
+    },
+    {
+      "id": "medlineplus-how-to-understand-your-lab-results",
+      "title": "How to Understand Your Lab Results",
+      "sourceUrl": "https://medlineplus.gov/lab-tests/how-to-understand-your-lab-results/",
+      "publisher": "MedlinePlus, National Library of Medicine",
+      "language": "en",
+      "accessedOn": "2026-11-07",
+      "publisherUpdatedOn": null,
+      "clinicalReviewStatus": "not_clinician_reviewed",
+      "contentMode": "selected_verbatim_excerpts",
+      "contentPath": "documents/how-to-understand-your-lab-results.md",
+      "topics": [
+        "reference ranges",
+        "units",
+        "interpretation limitations"
+      ],
+      "attribution": "Source: MedlinePlus, National Library of Medicine.",
+      "reuse": {
+        "status": "public_domain_us_government",
+        "policyUrl": "https://medlineplus.gov/about/using/usingcontent/",
+        "checkedOn": "2026-11-07",
+        "scope": "Medical-test text only; no images, encyclopedia, drug monographs, or linked third-party content."
+      }
+    }
+  ]
+}

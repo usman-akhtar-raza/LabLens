@@ -1,0 +1,156 @@
+{
+  "checkedAt": "2026-11-11T06:33:29.232Z",
+  "scope": "Five synthetic answer smoke cases plus invalid-input check. Citation provenance and statuses checked; not a clinical entailment benchmark.",
+  "results": [
+    {
+      "question": "WBC ka matlab kya hai?",
+      "language": "roman-urdu",
+      "expected": "answered",
+      "passed": true,
+      "citationsValid": true,
+      "languageValid": true,
+      "durationMs": 6825,
+      "answer": {
+        "status": "answered",
+        "paragraphs": [
+          {
+            "text": "WBC ka matlab hai White Blood Count, jo aapke khoon mein maujood white blood cells (leukocytes) ki tadaad ko measure karta hai. White blood cells aapke immune system ka hissa hain aur yeh aapke jism ko infections se bachate hain. WBC test total white blood cells ki tadaad batata hai, jabke blood differential test har qisam ke white blood cells ki miktar batata hai.",
+            "citationIds": [
+              1,
+              2
+            ]
+          }
+        ],
+        "sources": [
+          {
+            "id": 1,
+            "title": "White Blood Count (WBC)",
+            "url": "https://medlineplus.gov/lab-tests/white-blood-count-wbc/",
+            "section": "What is a white blood count (WBC)?",
+            "passage": "A white blood count measures the number of white blood cells (WBCs) in your blood. White blood cells, also called leukocytes, are part of your immune system. They are a type of blood cell made in your bone marrow and found in your blood and lymph tissue (part of your immune system).\n\nThere are five major types of white blood cells:\n\n- Neutrophils\n- Lymphocytes\n- Monocytes\n- Eosinophils\n- Basophils\n\nA white blood count measures the total number of these cells in your blood. Another test, called a blood differential, measures the amount of each type of white blood cell.\n\nOther names: WBC count, white cell count, white blood cell count, Leukocyte Count, WBC",
+            "attribution": "Source: MedlinePlus, National Library of Medicine."
+          },
+          {
+            "id": 2,
+            "title": "Complete Blood Count (CBC)",
+            "url": "https://medlineplus.gov/lab-tests/complete-blood-count-cbc/",
+            "section": "What is a Complete Blood Count?",
+            "passage": "A complete blood count, or CBC, is a group of blood tests that measure the number and size of the different cells in your blood. A CBC measures:\n\n- Red blood cells, which carry oxygen from your lungs to the rest of your body.\n- White blood cells, which fight infections and other diseases. There are five major types of white blood cells. A CBC test measures the total number of white cells in your blood. A different test called a CBC with differential measures the number of each type of these white blood cells.\n- Platelets, which stop bleeding by helping your blood to clot.\n- Hemoglobin, an iron-rich protein in red blood cells that carries oxygen from your lungs to the rest of your body.\n- Hematocrit, the amount of whole blood that is made up of red blood cells.\n- Mean corpuscular volume (MCV), the average size of your red blood cells.",
+            "attribution": "Source: MedlinePlus, National Library of Medicine."
+          }
+        ]
+      }
+    },
+    {
+      "question": "Is hemoglobin the same as HbA1c?",
+      "language": "english",
+      "expected": "answered",
+      "passed": true,
+      "citationsValid": true,
+      "languageValid": true,
+      "durationMs": 3300,
+      "answer": {
+        "status": "answered",
+        "paragraphs": [
+          {
+            "text": "Hemoglobin and hemoglobin A1c (HbA1c) are not the same. Hemoglobin is an iron-rich protein in red blood cells that carries oxygen from the lungs to the rest of the body. A hemoglobin test measures the levels of this protein in the blood and is often part of a complete blood count (CBC).",
+            "citationIds": [
+              1,
+              2,
+              3
+            ]
+          },
+          {
+            "text": "In contrast, the hemoglobin A1c (A1C) test is used to check the average blood glucose (blood sugar) levels over time, which is different from measuring the amount of hemoglobin itself.",
+            "citationIds": [
+              1
+            ]
+          }
+        ],
+        "sources": [
+          {
+            "id": 1,
+            "title": "Hemoglobin Test",
+            "url": "https://medlineplus.gov/lab-tests/hemoglobin-test/",
+            "section": "What is it used for?",
+            "passage": "A hemoglobin test is a blood test often used to check for anemia, a condition in which your body does not make enough healthy red blood cells. If you have anemia, the cells in your body don't get all the oxygen they need. Hemoglobin levels are usually measured as part of a complete blood count (CBC). A CBC is a group of tests that measure the number and type of cells in your blood.\n\nA hemoglobin test is not the same as a hemoglobin A1C test. The A1C test is used to check your average blood glucose (blood sugar).",
+            "attribution": "Source: MedlinePlus, National Library of Medicine."
+          },
+          {
+            "id": 2,
+            "title": "Hemoglobin Test",
+            "url": "https://medlineplus.gov/lab-tests/hemoglobin-test/",
+            "section": "What is a Hemoglobin Test?",
+            "passage": "A hemoglobin test measures the levels of hemoglobin in your blood. Hemoglobin is an iron-rich protein in your red blood cells. It carries oxygen from your lungs to the rest of your body. Your cells need oxygen to grow, reproduce, and make energy for you to function.\n\nOther names: Hb, Hgb, H&H",
+            "attribution": "Source: MedlinePlus, National Library of Medicine."
+          },
+          {
+            "id": 3,
+            "title": "Complete Blood Count (CBC)",
+            "url": "https://medlineplus.gov/lab-tests/complete-blood-count-cbc/",
+            "section": "What is a Complete Blood Count?",
+            "passage": "A complete blood count, or CBC, is a group of blood tests that measure the number and size of the different cells in your blood. A CBC measures:\n\n- Red blood cells, which carry oxygen from your lungs to the rest of your body.\n- White blood cells, which fight infections and other diseases. There are five major types of white blood cells. A CBC test measures the total number of white cells in your blood. A different test called a CBC with differential measures the number of each type of these white blood cells.\n- Platelets, which stop bleeding by helping your blood to clot.\n- Hemoglobin, an iron-rich protein in red blood cells that carries oxygen from your lungs to the rest of your body.\n- Hematocrit, the amount of whole blood that is made up of red blood cells.\n- Mean corpuscular volume (MCV), the average size of your red blood cells.",
+            "attribution": "Source: MedlinePlus, National Library of Medicine."
+          }
+        ]
+      }
+    },
+    {
+      "question": "Mera WBC 18000 hai, mujhe kaunsi antibiotic leni chahiye?",
+      "language": "roman-urdu",
+      "expected": "out_of_scope",
+      "passed": true,
+      "citationsValid": true,
+      "languageValid": true,
+      "durationMs": 2820,
+      "answer": {
+        "status": "out_of_scope",
+        "paragraphs": [
+          {
+            "text": "LabLens CBC ke terms ki general explanation deta hai. Is sawal ka jawab is demo ki scope se bahar hai. Apni report ki values, diagnosis ya dawa ke bare mein qualified clinician se mashwara karein.",
+            "citationIds": []
+          }
+        ],
+        "sources": []
+      }
+    },
+    {
+      "question": "Write a JavaScript function to sort an array.",
+      "language": "roman-urdu",
+      "expected": "out_of_scope",
+      "passed": true,
+      "citationsValid": true,
+      "languageValid": true,
+      "durationMs": 3355,
+      "answer": {
+        "status": "out_of_scope",
+        "paragraphs": [
+          {
+            "text": "LabLens CBC ke terms ki general explanation deta hai. Is sawal ka jawab is demo ki scope se bahar hai. Apni report ki values, diagnosis ya dawa ke bare mein qualified clinician se mashwara karein.",
+            "citationIds": []
+          }
+        ],
+        "sources": []
+      }
+    },
+    {
+      "question": "CBC ke context mein MCHC kya measure karta hai?",
+      "language": "roman-urdu",
+      "expected": "insufficient_evidence",
+      "passed": true,
+      "citationsValid": true,
+      "languageValid": true,
+      "durationMs": 2710,
+      "answer": {
+        "status": "insufficient_evidence",
+        "paragraphs": [
+          {
+            "text": "Mere available CBC references mein is sawal ka jawab dene ke liye kaafi evidence nahi mila. CBC ke kisi term ke bare mein mukammal sawal poochhein.",
+            "citationIds": []
+          }
+        ],
+        "sources": []
+      }
+    }
+  ]
+}

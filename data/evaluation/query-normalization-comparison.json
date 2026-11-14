@@ -1,0 +1,1968 @@
+{
+  "checkedAt": "2026-11-14T10:29:05.203Z",
+  "scope": "Synthetic user-style questions with manually labelled chunk IDs, grouped by their primary scenario.",
+  "embeddingModel": "text-embedding-3-small",
+  "corpusChunks": 23,
+  "hybrid": {
+    "keyword": "BM25",
+    "fusion": "equal-weight reciprocal rank fusion",
+    "fusionConstant": 60,
+    "candidateLimit": 20
+  },
+  "reranker": {
+    "model": "gpt-4.1-mini",
+    "candidateLimit": 10
+  },
+  "byScenario": {
+    "typo": {
+      "semantic": {
+        "total": 5,
+        "hitAt1": 5,
+        "hitAt3": 5,
+        "sourceHitAt3": 5,
+        "mrrAt3": 1
+      },
+      "hybrid": {
+        "total": 5,
+        "hitAt1": 3,
+        "hitAt3": 4,
+        "sourceHitAt3": 4,
+        "mrrAt3": 0.7
+      },
+      "reranked": {
+        "total": 5,
+        "hitAt1": 5,
+        "hitAt3": 5,
+        "sourceHitAt3": 5,
+        "mrrAt3": 1
+      },
+      "normalizedHybrid": {
+        "total": 5,
+        "hitAt1": 5,
+        "hitAt3": 5,
+        "sourceHitAt3": 5,
+        "mrrAt3": 1
+      },
+      "normalizedReranked": {
+        "total": 5,
+        "hitAt1": 5,
+        "hitAt3": 5,
+        "sourceHitAt3": 5,
+        "mrrAt3": 1
+      }
+    },
+    "english-roman-urdu": {
+      "semantic": {
+        "total": 5,
+        "hitAt1": 5,
+        "hitAt3": 5,
+        "sourceHitAt3": 5,
+        "mrrAt3": 1
+      },
+      "hybrid": {
+        "total": 5,
+        "hitAt1": 4,
+        "hitAt3": 5,
+        "sourceHitAt3": 5,
+        "mrrAt3": 0.9
+      },
+      "reranked": {
+        "total": 5,
+        "hitAt1": 5,
+        "hitAt3": 5,
+        "sourceHitAt3": 5,
+        "mrrAt3": 1
+      },
+      "normalizedHybrid": {
+        "total": 5,
+        "hitAt1": 4,
+        "hitAt3": 5,
+        "sourceHitAt3": 5,
+        "mrrAt3": 0.9
+      },
+      "normalizedReranked": {
+        "total": 5,
+        "hitAt1": 5,
+        "hitAt3": 5,
+        "sourceHitAt3": 5,
+        "mrrAt3": 1
+      }
+    },
+    "short-or-paraphrased": {
+      "semantic": {
+        "total": 5,
+        "hitAt1": 4,
+        "hitAt3": 5,
+        "sourceHitAt3": 5,
+        "mrrAt3": 0.9
+      },
+      "hybrid": {
+        "total": 5,
+        "hitAt1": 4,
+        "hitAt3": 5,
+        "sourceHitAt3": 5,
+        "mrrAt3": 0.9
+      },
+      "reranked": {
+        "total": 5,
+        "hitAt1": 5,
+        "hitAt3": 5,
+        "sourceHitAt3": 5,
+        "mrrAt3": 1
+      },
+      "normalizedHybrid": {
+        "total": 5,
+        "hitAt1": 4,
+        "hitAt3": 5,
+        "sourceHitAt3": 5,
+        "mrrAt3": 0.8666666666666666
+      },
+      "normalizedReranked": {
+        "total": 5,
+        "hitAt1": 5,
+        "hitAt3": 5,
+        "sourceHitAt3": 5,
+        "mrrAt3": 1
+      }
+    }
+  },
+  "allQuestions": {
+    "semantic": {
+      "total": 15,
+      "hitAt1": 14,
+      "hitAt3": 15,
+      "sourceHitAt3": 15,
+      "mrrAt3": 0.9666666666666667
+    },
+    "hybrid": {
+      "total": 15,
+      "hitAt1": 11,
+      "hitAt3": 14,
+      "sourceHitAt3": 14,
+      "mrrAt3": 0.8333333333333334
+    },
+    "reranked": {
+      "total": 15,
+      "hitAt1": 15,
+      "hitAt3": 15,
+      "sourceHitAt3": 15,
+      "mrrAt3": 1
+    },
+    "normalizedHybrid": {
+      "total": 15,
+      "hitAt1": 13,
+      "hitAt3": 15,
+      "sourceHitAt3": 15,
+      "mrrAt3": 0.9222222222222223
+    },
+    "normalizedReranked": {
+      "total": 15,
+      "hitAt1": 15,
+      "hitAt3": 15,
+      "sourceHitAt3": 15,
+      "mrrAt3": 1
+    }
+  },
+  "results": [
+    {
+      "id": "plt-spelling",
+      "scenario": "typo",
+      "question": "platlets help stop bleading how?",
+      "expectedChunkIds": [
+        "medlineplus-platelet-tests-b5307d826bca3ac7d41ad126",
+        "medlineplus-complete-blood-count-cbc-a985ba8dc87f113db2037fd3"
+      ],
+      "evidence": "Platelets help form clots that stop bleeding.",
+      "semantic": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-platelet-tests-b5307d826bca3ac7d41ad126",
+            "section": "What are platelet tests?",
+            "sourceId": "medlineplus-platelet-tests"
+          },
+          {
+            "id": "medlineplus-platelet-tests-6cdac665257b0ea6a48a7fdc",
+            "section": "Will I need to do anything to prepare for the test?",
+            "sourceId": "medlineplus-platelet-tests"
+          },
+          {
+            "id": "medlineplus-blood-differential-2293d886dbb645767ad1789f",
+            "section": "What is a blood differential test?",
+            "sourceId": "medlineplus-blood-differential"
+          }
+        ]
+      },
+      "hybrid": {
+        "rank": 2,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-hematocrit-test-099c5b5e70ad54a660acf4bf",
+            "section": "What is a hematocrit test?",
+            "sourceId": "medlineplus-hematocrit-test"
+          },
+          {
+            "id": "medlineplus-platelet-tests-b5307d826bca3ac7d41ad126",
+            "section": "What are platelet tests?",
+            "sourceId": "medlineplus-platelet-tests"
+          },
+          {
+            "id": "medlineplus-blood-differential-2293d886dbb645767ad1789f",
+            "section": "What is a blood differential test?",
+            "sourceId": "medlineplus-blood-differential"
+          }
+        ]
+      },
+      "reranked": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-platelet-tests-b5307d826bca3ac7d41ad126",
+            "section": "What are platelet tests?",
+            "sourceId": "medlineplus-platelet-tests"
+          },
+          {
+            "id": "medlineplus-complete-blood-count-cbc-a985ba8dc87f113db2037fd3",
+            "section": "What is a Complete Blood Count?",
+            "sourceId": "medlineplus-complete-blood-count-cbc"
+          },
+          {
+            "id": "medlineplus-hematocrit-test-099c5b5e70ad54a660acf4bf",
+            "section": "What is a hematocrit test?",
+            "sourceId": "medlineplus-hematocrit-test"
+          }
+        ]
+      },
+      "keywordTop3": [
+        "medlineplus-hematocrit-test-099c5b5e70ad54a660acf4bf",
+        "medlineplus-rdw-red-cell-distribution-width-69f4a626fe0081013b5e519b",
+        "medlineplus-rdw-red-cell-distribution-width-d241b0c88ccd1ed0146b6a0f"
+      ],
+      "normalizedHybrid": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-platelet-tests-b5307d826bca3ac7d41ad126",
+            "section": "What are platelet tests?",
+            "sourceId": "medlineplus-platelet-tests"
+          },
+          {
+            "id": "medlineplus-hematocrit-test-099c5b5e70ad54a660acf4bf",
+            "section": "What is a hematocrit test?",
+            "sourceId": "medlineplus-hematocrit-test"
+          },
+          {
+            "id": "medlineplus-complete-blood-count-cbc-a985ba8dc87f113db2037fd3",
+            "section": "What is a Complete Blood Count?",
+            "sourceId": "medlineplus-complete-blood-count-cbc"
+          }
+        ]
+      },
+      "normalizedReranked": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-platelet-tests-b5307d826bca3ac7d41ad126",
+            "section": "What are platelet tests?",
+            "sourceId": "medlineplus-platelet-tests"
+          },
+          {
+            "id": "medlineplus-complete-blood-count-cbc-a985ba8dc87f113db2037fd3",
+            "section": "What is a Complete Blood Count?",
+            "sourceId": "medlineplus-complete-blood-count-cbc"
+          },
+          {
+            "id": "medlineplus-hematocrit-test-099c5b5e70ad54a660acf4bf",
+            "section": "What is a hematocrit test?",
+            "sourceId": "medlineplus-hematocrit-test"
+          }
+        ]
+      }
+    },
+    {
+      "id": "rdw-transposed",
+      "scenario": "typo",
+      "question": "What does RWD measure on a blood test?",
+      "expectedChunkIds": [
+        "medlineplus-rdw-red-cell-distribution-width-d241b0c88ccd1ed0146b6a0f",
+        "medlineplus-rdw-red-cell-distribution-width-69f4a626fe0081013b5e519b"
+      ],
+      "evidence": "RDW measures variation in red-cell size or volume.",
+      "semantic": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-rdw-red-cell-distribution-width-69f4a626fe0081013b5e519b",
+            "section": "What do the results mean?",
+            "sourceId": "medlineplus-rdw-red-cell-distribution-width"
+          },
+          {
+            "id": "medlineplus-rdw-red-cell-distribution-width-d241b0c88ccd1ed0146b6a0f",
+            "section": "What is a red cell distribution width test?",
+            "sourceId": "medlineplus-rdw-red-cell-distribution-width"
+          },
+          {
+            "id": "medlineplus-red-blood-cell-rbc-count-80cbff96e41d0402c02b0351",
+            "section": "What is it used for?",
+            "sourceId": "medlineplus-red-blood-cell-rbc-count"
+          }
+        ]
+      },
+      "hybrid": {
+        "rank": null,
+        "sourceHitAt3": false,
+        "top": [
+          {
+            "id": "medlineplus-blood-differential-2293d886dbb645767ad1789f",
+            "section": "What is a blood differential test?",
+            "sourceId": "medlineplus-blood-differential"
+          },
+          {
+            "id": "medlineplus-hemoglobin-test-f5b85db924aa18e136ebd15d",
+            "section": "What is it used for?",
+            "sourceId": "medlineplus-hemoglobin-test"
+          },
+          {
+            "id": "medlineplus-how-to-understand-your-lab-results-98e341d5615ea7adab0da3c3",
+            "section": "What is a reference range?",
+            "sourceId": "medlineplus-how-to-understand-your-lab-results"
+          }
+        ]
+      },
+      "reranked": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-rdw-red-cell-distribution-width-d241b0c88ccd1ed0146b6a0f",
+            "section": "What is a red cell distribution width test?",
+            "sourceId": "medlineplus-rdw-red-cell-distribution-width"
+          },
+          {
+            "id": "medlineplus-complete-blood-count-cbc-a985ba8dc87f113db2037fd3",
+            "section": "What is a Complete Blood Count?",
+            "sourceId": "medlineplus-complete-blood-count-cbc"
+          },
+          {
+            "id": "medlineplus-mcv-mean-corpuscular-volume-25d79eb158abfc89365f848f",
+            "section": "What is an MCV blood test?",
+            "sourceId": "medlineplus-mcv-mean-corpuscular-volume"
+          }
+        ]
+      },
+      "keywordTop3": [
+        "medlineplus-hemoglobin-test-f5b85db924aa18e136ebd15d",
+        "medlineplus-how-to-understand-your-lab-results-98e341d5615ea7adab0da3c3",
+        "medlineplus-complete-blood-count-cbc-a985ba8dc87f113db2037fd3"
+      ],
+      "normalizedHybrid": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-rdw-red-cell-distribution-width-69f4a626fe0081013b5e519b",
+            "section": "What do the results mean?",
+            "sourceId": "medlineplus-rdw-red-cell-distribution-width"
+          },
+          {
+            "id": "medlineplus-rdw-red-cell-distribution-width-d241b0c88ccd1ed0146b6a0f",
+            "section": "What is a red cell distribution width test?",
+            "sourceId": "medlineplus-rdw-red-cell-distribution-width"
+          },
+          {
+            "id": "medlineplus-blood-differential-2293d886dbb645767ad1789f",
+            "section": "What is a blood differential test?",
+            "sourceId": "medlineplus-blood-differential"
+          }
+        ]
+      },
+      "normalizedReranked": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-rdw-red-cell-distribution-width-d241b0c88ccd1ed0146b6a0f",
+            "section": "What is a red cell distribution width test?",
+            "sourceId": "medlineplus-rdw-red-cell-distribution-width"
+          },
+          {
+            "id": "medlineplus-rdw-red-cell-distribution-width-69f4a626fe0081013b5e519b",
+            "section": "What do the results mean?",
+            "sourceId": "medlineplus-rdw-red-cell-distribution-width"
+          },
+          {
+            "id": "medlineplus-complete-blood-count-cbc-a985ba8dc87f113db2037fd3",
+            "section": "What is a Complete Blood Count?",
+            "sourceId": "medlineplus-complete-blood-count-cbc"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hct-spelling",
+      "scenario": "typo",
+      "question": "is hemotacrit a percent or a cell count",
+      "expectedChunkIds": [
+        "medlineplus-hematocrit-test-099c5b5e70ad54a660acf4bf",
+        "medlineplus-hematocrit-test-1f233ee6f51062940910f424",
+        "medlineplus-complete-blood-count-cbc-a985ba8dc87f113db2037fd3"
+      ],
+      "evidence": "Hematocrit is the percentage of blood made up of red cells.",
+      "semantic": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-hematocrit-test-099c5b5e70ad54a660acf4bf",
+            "section": "What is a hematocrit test?",
+            "sourceId": "medlineplus-hematocrit-test"
+          },
+          {
+            "id": "medlineplus-hematocrit-test-1f233ee6f51062940910f424",
+            "section": "What do the results mean?",
+            "sourceId": "medlineplus-hematocrit-test"
+          },
+          {
+            "id": "medlineplus-hemoglobin-test-f5b85db924aa18e136ebd15d",
+            "section": "What is it used for?",
+            "sourceId": "medlineplus-hemoglobin-test"
+          }
+        ]
+      },
+      "hybrid": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-hematocrit-test-099c5b5e70ad54a660acf4bf",
+            "section": "What is a hematocrit test?",
+            "sourceId": "medlineplus-hematocrit-test"
+          },
+          {
+            "id": "medlineplus-red-blood-cell-rbc-count-aa49e197fefab5beefd30c76",
+            "section": "What is a red blood cell (RBC) count?",
+            "sourceId": "medlineplus-red-blood-cell-rbc-count"
+          },
+          {
+            "id": "medlineplus-red-blood-cell-rbc-count-80cbff96e41d0402c02b0351",
+            "section": "What is it used for?",
+            "sourceId": "medlineplus-red-blood-cell-rbc-count"
+          }
+        ]
+      },
+      "reranked": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-hematocrit-test-099c5b5e70ad54a660acf4bf",
+            "section": "What is a hematocrit test?",
+            "sourceId": "medlineplus-hematocrit-test"
+          },
+          {
+            "id": "medlineplus-complete-blood-count-cbc-a985ba8dc87f113db2037fd3",
+            "section": "What is a Complete Blood Count?",
+            "sourceId": "medlineplus-complete-blood-count-cbc"
+          },
+          {
+            "id": "medlineplus-rdw-red-cell-distribution-width-69f4a626fe0081013b5e519b",
+            "section": "What do the results mean?",
+            "sourceId": "medlineplus-rdw-red-cell-distribution-width"
+          }
+        ]
+      },
+      "keywordTop3": [
+        "medlineplus-hematocrit-test-099c5b5e70ad54a660acf4bf",
+        "medlineplus-red-blood-cell-rbc-count-aa49e197fefab5beefd30c76",
+        "medlineplus-white-blood-count-wbc-684a1271c545da98fc1caaac"
+      ],
+      "normalizedHybrid": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-hematocrit-test-099c5b5e70ad54a660acf4bf",
+            "section": "What is a hematocrit test?",
+            "sourceId": "medlineplus-hematocrit-test"
+          },
+          {
+            "id": "medlineplus-hematocrit-test-1f233ee6f51062940910f424",
+            "section": "What do the results mean?",
+            "sourceId": "medlineplus-hematocrit-test"
+          },
+          {
+            "id": "medlineplus-red-blood-cell-rbc-count-aa49e197fefab5beefd30c76",
+            "section": "What is a red blood cell (RBC) count?",
+            "sourceId": "medlineplus-red-blood-cell-rbc-count"
+          }
+        ]
+      },
+      "normalizedReranked": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-hematocrit-test-1f233ee6f51062940910f424",
+            "section": "What do the results mean?",
+            "sourceId": "medlineplus-hematocrit-test"
+          },
+          {
+            "id": "medlineplus-hematocrit-test-099c5b5e70ad54a660acf4bf",
+            "section": "What is a hematocrit test?",
+            "sourceId": "medlineplus-hematocrit-test"
+          },
+          {
+            "id": "medlineplus-complete-blood-count-cbc-a985ba8dc87f113db2037fd3",
+            "section": "What is a Complete Blood Count?",
+            "sourceId": "medlineplus-complete-blood-count-cbc"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hb-spelling",
+      "scenario": "typo",
+      "question": "hemaglobin vs a1c is it the same thing",
+      "expectedChunkIds": [
+        "medlineplus-hemoglobin-test-f5b85db924aa18e136ebd15d"
+      ],
+      "evidence": "The hemoglobin test and HbA1c are explicitly distinguished.",
+      "semantic": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-hemoglobin-test-f5b85db924aa18e136ebd15d",
+            "section": "What is it used for?",
+            "sourceId": "medlineplus-hemoglobin-test"
+          },
+          {
+            "id": "medlineplus-hemoglobin-test-0eedfa1d321ecbc624cf40da",
+            "section": "What is a Hemoglobin Test?",
+            "sourceId": "medlineplus-hemoglobin-test"
+          },
+          {
+            "id": "medlineplus-hematocrit-test-099c5b5e70ad54a660acf4bf",
+            "section": "What is a hematocrit test?",
+            "sourceId": "medlineplus-hematocrit-test"
+          }
+        ]
+      },
+      "hybrid": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-hemoglobin-test-f5b85db924aa18e136ebd15d",
+            "section": "What is it used for?",
+            "sourceId": "medlineplus-hemoglobin-test"
+          },
+          {
+            "id": "medlineplus-hemoglobin-test-0eedfa1d321ecbc624cf40da",
+            "section": "What is a Hemoglobin Test?",
+            "sourceId": "medlineplus-hemoglobin-test"
+          },
+          {
+            "id": "medlineplus-mcv-mean-corpuscular-volume-25d79eb158abfc89365f848f",
+            "section": "What is an MCV blood test?",
+            "sourceId": "medlineplus-mcv-mean-corpuscular-volume"
+          }
+        ]
+      },
+      "reranked": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-hemoglobin-test-f5b85db924aa18e136ebd15d",
+            "section": "What is it used for?",
+            "sourceId": "medlineplus-hemoglobin-test"
+          },
+          {
+            "id": "medlineplus-hemoglobin-test-0eedfa1d321ecbc624cf40da",
+            "section": "What is a Hemoglobin Test?",
+            "sourceId": "medlineplus-hemoglobin-test"
+          },
+          {
+            "id": "medlineplus-red-blood-cell-rbc-count-80cbff96e41d0402c02b0351",
+            "section": "What is it used for?",
+            "sourceId": "medlineplus-red-blood-cell-rbc-count"
+          }
+        ]
+      },
+      "keywordTop3": [
+        "medlineplus-hemoglobin-test-f5b85db924aa18e136ebd15d",
+        "medlineplus-white-blood-count-wbc-7daf1358673d3cc20099530b",
+        "medlineplus-hemoglobin-test-0eedfa1d321ecbc624cf40da"
+      ],
+      "normalizedHybrid": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-hemoglobin-test-f5b85db924aa18e136ebd15d",
+            "section": "What is it used for?",
+            "sourceId": "medlineplus-hemoglobin-test"
+          },
+          {
+            "id": "medlineplus-hemoglobin-test-0eedfa1d321ecbc624cf40da",
+            "section": "What is a Hemoglobin Test?",
+            "sourceId": "medlineplus-hemoglobin-test"
+          },
+          {
+            "id": "medlineplus-hematocrit-test-099c5b5e70ad54a660acf4bf",
+            "section": "What is a hematocrit test?",
+            "sourceId": "medlineplus-hematocrit-test"
+          }
+        ]
+      },
+      "normalizedReranked": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-hemoglobin-test-f5b85db924aa18e136ebd15d",
+            "section": "What is it used for?",
+            "sourceId": "medlineplus-hemoglobin-test"
+          },
+          {
+            "id": "medlineplus-hemoglobin-test-0eedfa1d321ecbc624cf40da",
+            "section": "What is a Hemoglobin Test?",
+            "sourceId": "medlineplus-hemoglobin-test"
+          },
+          {
+            "id": "medlineplus-complete-blood-count-cbc-a985ba8dc87f113db2037fd3",
+            "section": "What is a Complete Blood Count?",
+            "sourceId": "medlineplus-complete-blood-count-cbc"
+          }
+        ]
+      }
+    },
+    {
+      "id": "diff-spelling",
+      "scenario": "typo",
+      "question": "does a white cell differntial break down each type",
+      "expectedChunkIds": [
+        "medlineplus-blood-differential-78f0c88f4bd71fe4f58b61f8",
+        "medlineplus-blood-differential-2293d886dbb645767ad1789f",
+        "medlineplus-white-blood-count-wbc-684a1271c545da98fc1caaac",
+        "medlineplus-complete-blood-count-cbc-a985ba8dc87f113db2037fd3"
+      ],
+      "evidence": "A differential measures each white-cell type separately.",
+      "semantic": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-blood-differential-78f0c88f4bd71fe4f58b61f8",
+            "section": "What is a blood differential test?",
+            "sourceId": "medlineplus-blood-differential"
+          },
+          {
+            "id": "medlineplus-blood-differential-2293d886dbb645767ad1789f",
+            "section": "What is a blood differential test?",
+            "sourceId": "medlineplus-blood-differential"
+          },
+          {
+            "id": "medlineplus-white-blood-count-wbc-684a1271c545da98fc1caaac",
+            "section": "What is a white blood count (WBC)?",
+            "sourceId": "medlineplus-white-blood-count-wbc"
+          }
+        ]
+      },
+      "hybrid": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-blood-differential-78f0c88f4bd71fe4f58b61f8",
+            "section": "What is a blood differential test?",
+            "sourceId": "medlineplus-blood-differential"
+          },
+          {
+            "id": "medlineplus-white-blood-count-wbc-684a1271c545da98fc1caaac",
+            "section": "What is a white blood count (WBC)?",
+            "sourceId": "medlineplus-white-blood-count-wbc"
+          },
+          {
+            "id": "medlineplus-blood-differential-2293d886dbb645767ad1789f",
+            "section": "What is a blood differential test?",
+            "sourceId": "medlineplus-blood-differential"
+          }
+        ]
+      },
+      "reranked": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-blood-differential-78f0c88f4bd71fe4f58b61f8",
+            "section": "What is a blood differential test?",
+            "sourceId": "medlineplus-blood-differential"
+          },
+          {
+            "id": "medlineplus-blood-differential-2293d886dbb645767ad1789f",
+            "section": "What is a blood differential test?",
+            "sourceId": "medlineplus-blood-differential"
+          },
+          {
+            "id": "medlineplus-complete-blood-count-cbc-a985ba8dc87f113db2037fd3",
+            "section": "What is a Complete Blood Count?",
+            "sourceId": "medlineplus-complete-blood-count-cbc"
+          }
+        ]
+      },
+      "keywordTop3": [
+        "medlineplus-white-blood-count-wbc-684a1271c545da98fc1caaac",
+        "medlineplus-blood-differential-2293d886dbb645767ad1789f",
+        "medlineplus-blood-differential-78f0c88f4bd71fe4f58b61f8"
+      ],
+      "normalizedHybrid": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-blood-differential-2293d886dbb645767ad1789f",
+            "section": "What is a blood differential test?",
+            "sourceId": "medlineplus-blood-differential"
+          },
+          {
+            "id": "medlineplus-blood-differential-78f0c88f4bd71fe4f58b61f8",
+            "section": "What is a blood differential test?",
+            "sourceId": "medlineplus-blood-differential"
+          },
+          {
+            "id": "medlineplus-white-blood-count-wbc-684a1271c545da98fc1caaac",
+            "section": "What is a white blood count (WBC)?",
+            "sourceId": "medlineplus-white-blood-count-wbc"
+          }
+        ]
+      },
+      "normalizedReranked": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-blood-differential-78f0c88f4bd71fe4f58b61f8",
+            "section": "What is a blood differential test?",
+            "sourceId": "medlineplus-blood-differential"
+          },
+          {
+            "id": "medlineplus-blood-differential-2293d886dbb645767ad1789f",
+            "section": "What is a blood differential test?",
+            "sourceId": "medlineplus-blood-differential"
+          },
+          {
+            "id": "medlineplus-white-blood-count-wbc-684a1271c545da98fc1caaac",
+            "section": "What is a white blood count (WBC)?",
+            "sourceId": "medlineplus-white-blood-count-wbc"
+          }
+        ]
+      }
+    },
+    {
+      "id": "rdw-mix",
+      "scenario": "english-roman-urdu",
+      "question": "report pe RDW ke aagay % likha hai, yeh percentage kis cheez ki hai?",
+      "expectedChunkIds": [
+        "medlineplus-rdw-red-cell-distribution-width-69f4a626fe0081013b5e519b"
+      ],
+      "evidence": "The RDW results passage connects the percentage format to variation in red-cell size and volume.",
+      "semantic": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-rdw-red-cell-distribution-width-69f4a626fe0081013b5e519b",
+            "section": "What do the results mean?",
+            "sourceId": "medlineplus-rdw-red-cell-distribution-width"
+          },
+          {
+            "id": "medlineplus-rdw-red-cell-distribution-width-d241b0c88ccd1ed0146b6a0f",
+            "section": "What is a red cell distribution width test?",
+            "sourceId": "medlineplus-rdw-red-cell-distribution-width"
+          },
+          {
+            "id": "medlineplus-hematocrit-test-1f233ee6f51062940910f424",
+            "section": "What do the results mean?",
+            "sourceId": "medlineplus-hematocrit-test"
+          }
+        ]
+      },
+      "hybrid": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-rdw-red-cell-distribution-width-69f4a626fe0081013b5e519b",
+            "section": "What do the results mean?",
+            "sourceId": "medlineplus-rdw-red-cell-distribution-width"
+          },
+          {
+            "id": "medlineplus-rdw-red-cell-distribution-width-d241b0c88ccd1ed0146b6a0f",
+            "section": "What is a red cell distribution width test?",
+            "sourceId": "medlineplus-rdw-red-cell-distribution-width"
+          },
+          {
+            "id": "medlineplus-hematocrit-test-1f233ee6f51062940910f424",
+            "section": "What do the results mean?",
+            "sourceId": "medlineplus-hematocrit-test"
+          }
+        ]
+      },
+      "reranked": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-rdw-red-cell-distribution-width-69f4a626fe0081013b5e519b",
+            "section": "What do the results mean?",
+            "sourceId": "medlineplus-rdw-red-cell-distribution-width"
+          },
+          {
+            "id": "medlineplus-rdw-red-cell-distribution-width-d241b0c88ccd1ed0146b6a0f",
+            "section": "What is a red cell distribution width test?",
+            "sourceId": "medlineplus-rdw-red-cell-distribution-width"
+          },
+          {
+            "id": "medlineplus-hematocrit-test-099c5b5e70ad54a660acf4bf",
+            "section": "What is a hematocrit test?",
+            "sourceId": "medlineplus-hematocrit-test"
+          }
+        ]
+      },
+      "keywordTop3": [
+        "medlineplus-rdw-red-cell-distribution-width-69f4a626fe0081013b5e519b",
+        "medlineplus-rdw-red-cell-distribution-width-d241b0c88ccd1ed0146b6a0f",
+        "medlineplus-how-to-understand-your-lab-results-7ce5fe9052c170f5a4ce9912"
+      ],
+      "normalizedHybrid": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-rdw-red-cell-distribution-width-69f4a626fe0081013b5e519b",
+            "section": "What do the results mean?",
+            "sourceId": "medlineplus-rdw-red-cell-distribution-width"
+          },
+          {
+            "id": "medlineplus-rdw-red-cell-distribution-width-d241b0c88ccd1ed0146b6a0f",
+            "section": "What is a red cell distribution width test?",
+            "sourceId": "medlineplus-rdw-red-cell-distribution-width"
+          },
+          {
+            "id": "medlineplus-hematocrit-test-1f233ee6f51062940910f424",
+            "section": "What do the results mean?",
+            "sourceId": "medlineplus-hematocrit-test"
+          }
+        ]
+      },
+      "normalizedReranked": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-rdw-red-cell-distribution-width-69f4a626fe0081013b5e519b",
+            "section": "What do the results mean?",
+            "sourceId": "medlineplus-rdw-red-cell-distribution-width"
+          },
+          {
+            "id": "medlineplus-rdw-red-cell-distribution-width-d241b0c88ccd1ed0146b6a0f",
+            "section": "What is a red cell distribution width test?",
+            "sourceId": "medlineplus-rdw-red-cell-distribution-width"
+          },
+          {
+            "id": "medlineplus-how-to-understand-your-lab-results-7ce5fe9052c170f5a4ce9912",
+            "section": "What is a reference range?",
+            "sourceId": "medlineplus-how-to-understand-your-lab-results"
+          }
+        ]
+      }
+    },
+    {
+      "id": "range-mix",
+      "scenario": "english-roman-urdu",
+      "question": "normal range google wali dekhun ya jo report pe print hai?",
+      "expectedChunkIds": [
+        "medlineplus-how-to-understand-your-lab-results-7ce5fe9052c170f5a4ce9912"
+      ],
+      "evidence": "Use the range printed on the lab report.",
+      "semantic": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-how-to-understand-your-lab-results-7ce5fe9052c170f5a4ce9912",
+            "section": "What is a reference range?",
+            "sourceId": "medlineplus-how-to-understand-your-lab-results"
+          },
+          {
+            "id": "medlineplus-how-to-understand-your-lab-results-98e341d5615ea7adab0da3c3",
+            "section": "What is a reference range?",
+            "sourceId": "medlineplus-how-to-understand-your-lab-results"
+          },
+          {
+            "id": "medlineplus-rdw-red-cell-distribution-width-69f4a626fe0081013b5e519b",
+            "section": "What do the results mean?",
+            "sourceId": "medlineplus-rdw-red-cell-distribution-width"
+          }
+        ]
+      },
+      "hybrid": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-how-to-understand-your-lab-results-7ce5fe9052c170f5a4ce9912",
+            "section": "What is a reference range?",
+            "sourceId": "medlineplus-how-to-understand-your-lab-results"
+          },
+          {
+            "id": "medlineplus-how-to-understand-your-lab-results-98e341d5615ea7adab0da3c3",
+            "section": "What is a reference range?",
+            "sourceId": "medlineplus-how-to-understand-your-lab-results"
+          },
+          {
+            "id": "medlineplus-rdw-red-cell-distribution-width-69f4a626fe0081013b5e519b",
+            "section": "What do the results mean?",
+            "sourceId": "medlineplus-rdw-red-cell-distribution-width"
+          }
+        ]
+      },
+      "reranked": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-how-to-understand-your-lab-results-7ce5fe9052c170f5a4ce9912",
+            "section": "What is a reference range?",
+            "sourceId": "medlineplus-how-to-understand-your-lab-results"
+          },
+          {
+            "id": "medlineplus-rdw-red-cell-distribution-width-69f4a626fe0081013b5e519b",
+            "section": "What do the results mean?",
+            "sourceId": "medlineplus-rdw-red-cell-distribution-width"
+          },
+          {
+            "id": "medlineplus-hematocrit-test-1f233ee6f51062940910f424",
+            "section": "What do the results mean?",
+            "sourceId": "medlineplus-hematocrit-test"
+          }
+        ]
+      },
+      "keywordTop3": [
+        "medlineplus-how-to-understand-your-lab-results-7ce5fe9052c170f5a4ce9912",
+        "medlineplus-how-to-understand-your-lab-results-98e341d5615ea7adab0da3c3",
+        "medlineplus-rdw-red-cell-distribution-width-69f4a626fe0081013b5e519b"
+      ],
+      "normalizedHybrid": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-how-to-understand-your-lab-results-7ce5fe9052c170f5a4ce9912",
+            "section": "What is a reference range?",
+            "sourceId": "medlineplus-how-to-understand-your-lab-results"
+          },
+          {
+            "id": "medlineplus-how-to-understand-your-lab-results-98e341d5615ea7adab0da3c3",
+            "section": "What is a reference range?",
+            "sourceId": "medlineplus-how-to-understand-your-lab-results"
+          },
+          {
+            "id": "medlineplus-rdw-red-cell-distribution-width-69f4a626fe0081013b5e519b",
+            "section": "What do the results mean?",
+            "sourceId": "medlineplus-rdw-red-cell-distribution-width"
+          }
+        ]
+      },
+      "normalizedReranked": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-how-to-understand-your-lab-results-7ce5fe9052c170f5a4ce9912",
+            "section": "What is a reference range?",
+            "sourceId": "medlineplus-how-to-understand-your-lab-results"
+          },
+          {
+            "id": "medlineplus-rdw-red-cell-distribution-width-69f4a626fe0081013b5e519b",
+            "section": "What do the results mean?",
+            "sourceId": "medlineplus-rdw-red-cell-distribution-width"
+          },
+          {
+            "id": "medlineplus-hematocrit-test-1f233ee6f51062940910f424",
+            "section": "What do the results mean?",
+            "sourceId": "medlineplus-hematocrit-test"
+          }
+        ]
+      }
+    },
+    {
+      "id": "platelet-prep-mix",
+      "scenario": "english-roman-urdu",
+      "question": "sirf platelet count hai, koi special tayari karni hoti hai?",
+      "expectedChunkIds": [
+        "medlineplus-platelet-tests-6cdac665257b0ea6a48a7fdc"
+      ],
+      "evidence": "The platelet count preparation passage addresses preparation specifically.",
+      "semantic": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-platelet-tests-6cdac665257b0ea6a48a7fdc",
+            "section": "Will I need to do anything to prepare for the test?",
+            "sourceId": "medlineplus-platelet-tests"
+          },
+          {
+            "id": "medlineplus-platelet-tests-b5307d826bca3ac7d41ad126",
+            "section": "What are platelet tests?",
+            "sourceId": "medlineplus-platelet-tests"
+          },
+          {
+            "id": "medlineplus-red-blood-cell-rbc-count-80cbff96e41d0402c02b0351",
+            "section": "What is it used for?",
+            "sourceId": "medlineplus-red-blood-cell-rbc-count"
+          }
+        ]
+      },
+      "hybrid": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-platelet-tests-6cdac665257b0ea6a48a7fdc",
+            "section": "Will I need to do anything to prepare for the test?",
+            "sourceId": "medlineplus-platelet-tests"
+          },
+          {
+            "id": "medlineplus-platelet-tests-b5307d826bca3ac7d41ad126",
+            "section": "What are platelet tests?",
+            "sourceId": "medlineplus-platelet-tests"
+          },
+          {
+            "id": "medlineplus-complete-blood-count-cbc-0b06e52b817839e2e6991c01",
+            "section": "Will I need to do anything to prepare for the test?",
+            "sourceId": "medlineplus-complete-blood-count-cbc"
+          }
+        ]
+      },
+      "reranked": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-platelet-tests-6cdac665257b0ea6a48a7fdc",
+            "section": "Will I need to do anything to prepare for the test?",
+            "sourceId": "medlineplus-platelet-tests"
+          },
+          {
+            "id": "medlineplus-complete-blood-count-cbc-0b06e52b817839e2e6991c01",
+            "section": "Will I need to do anything to prepare for the test?",
+            "sourceId": "medlineplus-complete-blood-count-cbc"
+          },
+          {
+            "id": "medlineplus-platelet-tests-b5307d826bca3ac7d41ad126",
+            "section": "What are platelet tests?",
+            "sourceId": "medlineplus-platelet-tests"
+          }
+        ]
+      },
+      "keywordTop3": [
+        "medlineplus-platelet-tests-6cdac665257b0ea6a48a7fdc",
+        "medlineplus-platelet-tests-b5307d826bca3ac7d41ad126",
+        "medlineplus-complete-blood-count-cbc-0b06e52b817839e2e6991c01"
+      ],
+      "normalizedHybrid": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-platelet-tests-6cdac665257b0ea6a48a7fdc",
+            "section": "Will I need to do anything to prepare for the test?",
+            "sourceId": "medlineplus-platelet-tests"
+          },
+          {
+            "id": "medlineplus-platelet-tests-b5307d826bca3ac7d41ad126",
+            "section": "What are platelet tests?",
+            "sourceId": "medlineplus-platelet-tests"
+          },
+          {
+            "id": "medlineplus-complete-blood-count-cbc-0b06e52b817839e2e6991c01",
+            "section": "Will I need to do anything to prepare for the test?",
+            "sourceId": "medlineplus-complete-blood-count-cbc"
+          }
+        ]
+      },
+      "normalizedReranked": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-platelet-tests-6cdac665257b0ea6a48a7fdc",
+            "section": "Will I need to do anything to prepare for the test?",
+            "sourceId": "medlineplus-platelet-tests"
+          },
+          {
+            "id": "medlineplus-complete-blood-count-cbc-0b06e52b817839e2e6991c01",
+            "section": "Will I need to do anything to prepare for the test?",
+            "sourceId": "medlineplus-complete-blood-count-cbc"
+          },
+          {
+            "id": "medlineplus-platelet-tests-b5307d826bca3ac7d41ad126",
+            "section": "What are platelet tests?",
+            "sourceId": "medlineplus-platelet-tests"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cbc-prep-mix",
+      "scenario": "english-roman-urdu",
+      "question": "CBC ke saath aur tests bhi hain, fasting wali baat kis pe depend karti hai?",
+      "expectedChunkIds": [
+        "medlineplus-complete-blood-count-cbc-0b06e52b817839e2e6991c01"
+      ],
+      "evidence": "The CBC preparation passage says other tests may require fasting and the provider gives instructions.",
+      "semantic": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-complete-blood-count-cbc-0b06e52b817839e2e6991c01",
+            "section": "Will I need to do anything to prepare for the test?",
+            "sourceId": "medlineplus-complete-blood-count-cbc"
+          },
+          {
+            "id": "medlineplus-complete-blood-count-cbc-2f52b0abb5d4328999514977",
+            "section": "Is there anything else I need to know about a complete blood count?",
+            "sourceId": "medlineplus-complete-blood-count-cbc"
+          },
+          {
+            "id": "medlineplus-complete-blood-count-cbc-a985ba8dc87f113db2037fd3",
+            "section": "What is a Complete Blood Count?",
+            "sourceId": "medlineplus-complete-blood-count-cbc"
+          }
+        ]
+      },
+      "hybrid": {
+        "rank": 2,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-complete-blood-count-cbc-a985ba8dc87f113db2037fd3",
+            "section": "What is a Complete Blood Count?",
+            "sourceId": "medlineplus-complete-blood-count-cbc"
+          },
+          {
+            "id": "medlineplus-complete-blood-count-cbc-0b06e52b817839e2e6991c01",
+            "section": "Will I need to do anything to prepare for the test?",
+            "sourceId": "medlineplus-complete-blood-count-cbc"
+          },
+          {
+            "id": "medlineplus-complete-blood-count-cbc-2f52b0abb5d4328999514977",
+            "section": "Is there anything else I need to know about a complete blood count?",
+            "sourceId": "medlineplus-complete-blood-count-cbc"
+          }
+        ]
+      },
+      "reranked": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-complete-blood-count-cbc-0b06e52b817839e2e6991c01",
+            "section": "Will I need to do anything to prepare for the test?",
+            "sourceId": "medlineplus-complete-blood-count-cbc"
+          },
+          {
+            "id": "medlineplus-complete-blood-count-cbc-a985ba8dc87f113db2037fd3",
+            "section": "What is a Complete Blood Count?",
+            "sourceId": "medlineplus-complete-blood-count-cbc"
+          },
+          {
+            "id": "medlineplus-complete-blood-count-cbc-2f52b0abb5d4328999514977",
+            "section": "Is there anything else I need to know about a complete blood count?",
+            "sourceId": "medlineplus-complete-blood-count-cbc"
+          }
+        ]
+      },
+      "keywordTop3": [
+        "medlineplus-complete-blood-count-cbc-a985ba8dc87f113db2037fd3",
+        "medlineplus-hemoglobin-test-f5b85db924aa18e136ebd15d",
+        "medlineplus-complete-blood-count-cbc-2f52b0abb5d4328999514977"
+      ],
+      "normalizedHybrid": {
+        "rank": 2,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-complete-blood-count-cbc-a985ba8dc87f113db2037fd3",
+            "section": "What is a Complete Blood Count?",
+            "sourceId": "medlineplus-complete-blood-count-cbc"
+          },
+          {
+            "id": "medlineplus-complete-blood-count-cbc-0b06e52b817839e2e6991c01",
+            "section": "Will I need to do anything to prepare for the test?",
+            "sourceId": "medlineplus-complete-blood-count-cbc"
+          },
+          {
+            "id": "medlineplus-complete-blood-count-cbc-2f52b0abb5d4328999514977",
+            "section": "Is there anything else I need to know about a complete blood count?",
+            "sourceId": "medlineplus-complete-blood-count-cbc"
+          }
+        ]
+      },
+      "normalizedReranked": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-complete-blood-count-cbc-0b06e52b817839e2e6991c01",
+            "section": "Will I need to do anything to prepare for the test?",
+            "sourceId": "medlineplus-complete-blood-count-cbc"
+          },
+          {
+            "id": "medlineplus-complete-blood-count-cbc-a985ba8dc87f113db2037fd3",
+            "section": "What is a Complete Blood Count?",
+            "sourceId": "medlineplus-complete-blood-count-cbc"
+          },
+          {
+            "id": "medlineplus-complete-blood-count-cbc-2f52b0abb5d4328999514977",
+            "section": "Is there anything else I need to know about a complete blood count?",
+            "sourceId": "medlineplus-complete-blood-count-cbc"
+          }
+        ]
+      }
+    },
+    {
+      "id": "mcv-mix",
+      "scenario": "english-roman-urdu",
+      "question": "MCV mein cells gin rahe hain ya average size dekh rahe hain?",
+      "expectedChunkIds": [
+        "medlineplus-mcv-mean-corpuscular-volume-25d79eb158abfc89365f848f",
+        "medlineplus-complete-blood-count-cbc-a985ba8dc87f113db2037fd3",
+        "medlineplus-complete-blood-count-cbc-12265eb015829f98de232c5c"
+      ],
+      "evidence": "MCV measures the average size of red blood cells.",
+      "semantic": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-mcv-mean-corpuscular-volume-25d79eb158abfc89365f848f",
+            "section": "What is an MCV blood test?",
+            "sourceId": "medlineplus-mcv-mean-corpuscular-volume"
+          },
+          {
+            "id": "medlineplus-mcv-mean-corpuscular-volume-908baf44d9f1a27f0b8ec922",
+            "section": "Is there anything else I need to know about an MCV blood test?",
+            "sourceId": "medlineplus-mcv-mean-corpuscular-volume"
+          },
+          {
+            "id": "medlineplus-mcv-mean-corpuscular-volume-e43aa3751dff899df96ee777",
+            "section": "What do the results mean?",
+            "sourceId": "medlineplus-mcv-mean-corpuscular-volume"
+          }
+        ]
+      },
+      "hybrid": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-mcv-mean-corpuscular-volume-25d79eb158abfc89365f848f",
+            "section": "What is an MCV blood test?",
+            "sourceId": "medlineplus-mcv-mean-corpuscular-volume"
+          },
+          {
+            "id": "medlineplus-complete-blood-count-cbc-12265eb015829f98de232c5c",
+            "section": "What is a Complete Blood Count?",
+            "sourceId": "medlineplus-complete-blood-count-cbc"
+          },
+          {
+            "id": "medlineplus-mcv-mean-corpuscular-volume-908baf44d9f1a27f0b8ec922",
+            "section": "Is there anything else I need to know about an MCV blood test?",
+            "sourceId": "medlineplus-mcv-mean-corpuscular-volume"
+          }
+        ]
+      },
+      "reranked": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-mcv-mean-corpuscular-volume-25d79eb158abfc89365f848f",
+            "section": "What is an MCV blood test?",
+            "sourceId": "medlineplus-mcv-mean-corpuscular-volume"
+          },
+          {
+            "id": "medlineplus-complete-blood-count-cbc-a985ba8dc87f113db2037fd3",
+            "section": "What is a Complete Blood Count?",
+            "sourceId": "medlineplus-complete-blood-count-cbc"
+          },
+          {
+            "id": "medlineplus-complete-blood-count-cbc-12265eb015829f98de232c5c",
+            "section": "What is a Complete Blood Count?",
+            "sourceId": "medlineplus-complete-blood-count-cbc"
+          }
+        ]
+      },
+      "keywordTop3": [
+        "medlineplus-mcv-mean-corpuscular-volume-25d79eb158abfc89365f848f",
+        "medlineplus-complete-blood-count-cbc-12265eb015829f98de232c5c",
+        "medlineplus-complete-blood-count-cbc-a985ba8dc87f113db2037fd3"
+      ],
+      "normalizedHybrid": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-mcv-mean-corpuscular-volume-25d79eb158abfc89365f848f",
+            "section": "What is an MCV blood test?",
+            "sourceId": "medlineplus-mcv-mean-corpuscular-volume"
+          },
+          {
+            "id": "medlineplus-complete-blood-count-cbc-12265eb015829f98de232c5c",
+            "section": "What is a Complete Blood Count?",
+            "sourceId": "medlineplus-complete-blood-count-cbc"
+          },
+          {
+            "id": "medlineplus-mcv-mean-corpuscular-volume-908baf44d9f1a27f0b8ec922",
+            "section": "Is there anything else I need to know about an MCV blood test?",
+            "sourceId": "medlineplus-mcv-mean-corpuscular-volume"
+          }
+        ]
+      },
+      "normalizedReranked": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-mcv-mean-corpuscular-volume-25d79eb158abfc89365f848f",
+            "section": "What is an MCV blood test?",
+            "sourceId": "medlineplus-mcv-mean-corpuscular-volume"
+          },
+          {
+            "id": "medlineplus-complete-blood-count-cbc-a985ba8dc87f113db2037fd3",
+            "section": "What is a Complete Blood Count?",
+            "sourceId": "medlineplus-complete-blood-count-cbc"
+          },
+          {
+            "id": "medlineplus-complete-blood-count-cbc-12265eb015829f98de232c5c",
+            "section": "What is a Complete Blood Count?",
+            "sourceId": "medlineplus-complete-blood-count-cbc"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hct-percent",
+      "scenario": "short-or-paraphrased",
+      "question": "why is HCT a %?",
+      "expectedChunkIds": [
+        "medlineplus-hematocrit-test-099c5b5e70ad54a660acf4bf",
+        "medlineplus-hematocrit-test-1f233ee6f51062940910f424",
+        "medlineplus-complete-blood-count-cbc-a985ba8dc87f113db2037fd3"
+      ],
+      "evidence": "Hematocrit measures the fraction of blood made up of red blood cells.",
+      "semantic": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-hematocrit-test-099c5b5e70ad54a660acf4bf",
+            "section": "What is a hematocrit test?",
+            "sourceId": "medlineplus-hematocrit-test"
+          },
+          {
+            "id": "medlineplus-hematocrit-test-1f233ee6f51062940910f424",
+            "section": "What do the results mean?",
+            "sourceId": "medlineplus-hematocrit-test"
+          },
+          {
+            "id": "medlineplus-hemoglobin-test-f5b85db924aa18e136ebd15d",
+            "section": "What is it used for?",
+            "sourceId": "medlineplus-hemoglobin-test"
+          }
+        ]
+      },
+      "hybrid": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-hematocrit-test-099c5b5e70ad54a660acf4bf",
+            "section": "What is a hematocrit test?",
+            "sourceId": "medlineplus-hematocrit-test"
+          },
+          {
+            "id": "medlineplus-how-to-understand-your-lab-results-98e341d5615ea7adab0da3c3",
+            "section": "What is a reference range?",
+            "sourceId": "medlineplus-how-to-understand-your-lab-results"
+          },
+          {
+            "id": "medlineplus-how-to-understand-your-lab-results-7ce5fe9052c170f5a4ce9912",
+            "section": "What is a reference range?",
+            "sourceId": "medlineplus-how-to-understand-your-lab-results"
+          }
+        ]
+      },
+      "reranked": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-hematocrit-test-099c5b5e70ad54a660acf4bf",
+            "section": "What is a hematocrit test?",
+            "sourceId": "medlineplus-hematocrit-test"
+          },
+          {
+            "id": "medlineplus-hematocrit-test-1f233ee6f51062940910f424",
+            "section": "What do the results mean?",
+            "sourceId": "medlineplus-hematocrit-test"
+          },
+          {
+            "id": "medlineplus-complete-blood-count-cbc-a985ba8dc87f113db2037fd3",
+            "section": "What is a Complete Blood Count?",
+            "sourceId": "medlineplus-complete-blood-count-cbc"
+          }
+        ]
+      },
+      "keywordTop3": [
+        "medlineplus-hematocrit-test-099c5b5e70ad54a660acf4bf",
+        "medlineplus-how-to-understand-your-lab-results-98e341d5615ea7adab0da3c3",
+        "medlineplus-how-to-understand-your-lab-results-7ce5fe9052c170f5a4ce9912"
+      ],
+      "normalizedHybrid": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-hematocrit-test-099c5b5e70ad54a660acf4bf",
+            "section": "What is a hematocrit test?",
+            "sourceId": "medlineplus-hematocrit-test"
+          },
+          {
+            "id": "medlineplus-hematocrit-test-1f233ee6f51062940910f424",
+            "section": "What do the results mean?",
+            "sourceId": "medlineplus-hematocrit-test"
+          },
+          {
+            "id": "medlineplus-complete-blood-count-cbc-a985ba8dc87f113db2037fd3",
+            "section": "What is a Complete Blood Count?",
+            "sourceId": "medlineplus-complete-blood-count-cbc"
+          }
+        ]
+      },
+      "normalizedReranked": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-hematocrit-test-1f233ee6f51062940910f424",
+            "section": "What do the results mean?",
+            "sourceId": "medlineplus-hematocrit-test"
+          },
+          {
+            "id": "medlineplus-hematocrit-test-099c5b5e70ad54a660acf4bf",
+            "section": "What is a hematocrit test?",
+            "sourceId": "medlineplus-hematocrit-test"
+          },
+          {
+            "id": "medlineplus-complete-blood-count-cbc-a985ba8dc87f113db2037fd3",
+            "section": "What is a Complete Blood Count?",
+            "sourceId": "medlineplus-complete-blood-count-cbc"
+          }
+        ]
+      }
+    },
+    {
+      "id": "rbc-alias",
+      "scenario": "short-or-paraphrased",
+      "question": "erythrocyte count counts what exactly",
+      "expectedChunkIds": [
+        "medlineplus-red-blood-cell-rbc-count-aa49e197fefab5beefd30c76",
+        "medlineplus-complete-blood-count-cbc-a985ba8dc87f113db2037fd3"
+      ],
+      "evidence": "RBC count measures the number of red cells, also called erythrocytes.",
+      "semantic": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-red-blood-cell-rbc-count-aa49e197fefab5beefd30c76",
+            "section": "What is a red blood cell (RBC) count?",
+            "sourceId": "medlineplus-red-blood-cell-rbc-count"
+          },
+          {
+            "id": "medlineplus-red-blood-cell-rbc-count-80cbff96e41d0402c02b0351",
+            "section": "What is it used for?",
+            "sourceId": "medlineplus-red-blood-cell-rbc-count"
+          },
+          {
+            "id": "medlineplus-complete-blood-count-cbc-a985ba8dc87f113db2037fd3",
+            "section": "What is a Complete Blood Count?",
+            "sourceId": "medlineplus-complete-blood-count-cbc"
+          }
+        ]
+      },
+      "hybrid": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-red-blood-cell-rbc-count-aa49e197fefab5beefd30c76",
+            "section": "What is a red blood cell (RBC) count?",
+            "sourceId": "medlineplus-red-blood-cell-rbc-count"
+          },
+          {
+            "id": "medlineplus-complete-blood-count-cbc-12265eb015829f98de232c5c",
+            "section": "What is a Complete Blood Count?",
+            "sourceId": "medlineplus-complete-blood-count-cbc"
+          },
+          {
+            "id": "medlineplus-red-blood-cell-rbc-count-80cbff96e41d0402c02b0351",
+            "section": "What is it used for?",
+            "sourceId": "medlineplus-red-blood-cell-rbc-count"
+          }
+        ]
+      },
+      "reranked": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-red-blood-cell-rbc-count-aa49e197fefab5beefd30c76",
+            "section": "What is a red blood cell (RBC) count?",
+            "sourceId": "medlineplus-red-blood-cell-rbc-count"
+          },
+          {
+            "id": "medlineplus-red-blood-cell-rbc-count-80cbff96e41d0402c02b0351",
+            "section": "What is it used for?",
+            "sourceId": "medlineplus-red-blood-cell-rbc-count"
+          },
+          {
+            "id": "medlineplus-complete-blood-count-cbc-a985ba8dc87f113db2037fd3",
+            "section": "What is a Complete Blood Count?",
+            "sourceId": "medlineplus-complete-blood-count-cbc"
+          }
+        ]
+      },
+      "keywordTop3": [
+        "medlineplus-red-blood-cell-rbc-count-aa49e197fefab5beefd30c76",
+        "medlineplus-complete-blood-count-cbc-12265eb015829f98de232c5c",
+        "medlineplus-white-blood-count-wbc-684a1271c545da98fc1caaac"
+      ],
+      "normalizedHybrid": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-red-blood-cell-rbc-count-aa49e197fefab5beefd30c76",
+            "section": "What is a red blood cell (RBC) count?",
+            "sourceId": "medlineplus-red-blood-cell-rbc-count"
+          },
+          {
+            "id": "medlineplus-complete-blood-count-cbc-12265eb015829f98de232c5c",
+            "section": "What is a Complete Blood Count?",
+            "sourceId": "medlineplus-complete-blood-count-cbc"
+          },
+          {
+            "id": "medlineplus-red-blood-cell-rbc-count-80cbff96e41d0402c02b0351",
+            "section": "What is it used for?",
+            "sourceId": "medlineplus-red-blood-cell-rbc-count"
+          }
+        ]
+      },
+      "normalizedReranked": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-red-blood-cell-rbc-count-aa49e197fefab5beefd30c76",
+            "section": "What is a red blood cell (RBC) count?",
+            "sourceId": "medlineplus-red-blood-cell-rbc-count"
+          },
+          {
+            "id": "medlineplus-red-blood-cell-rbc-count-80cbff96e41d0402c02b0351",
+            "section": "What is it used for?",
+            "sourceId": "medlineplus-red-blood-cell-rbc-count"
+          },
+          {
+            "id": "medlineplus-complete-blood-count-cbc-a985ba8dc87f113db2037fd3",
+            "section": "What is a Complete Blood Count?",
+            "sourceId": "medlineplus-complete-blood-count-cbc"
+          }
+        ]
+      }
+    },
+    {
+      "id": "diff-paraphrase",
+      "scenario": "short-or-paraphrased",
+      "question": "which test splits the infection-fighting cells into types instead of one total?",
+      "expectedChunkIds": [
+        "medlineplus-blood-differential-2293d886dbb645767ad1789f",
+        "medlineplus-blood-differential-78f0c88f4bd71fe4f58b61f8",
+        "medlineplus-white-blood-count-wbc-684a1271c545da98fc1caaac",
+        "medlineplus-complete-blood-count-cbc-a985ba8dc87f113db2037fd3"
+      ],
+      "evidence": "The differential measures the types separately from the total white-cell count.",
+      "semantic": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-blood-differential-78f0c88f4bd71fe4f58b61f8",
+            "section": "What is a blood differential test?",
+            "sourceId": "medlineplus-blood-differential"
+          },
+          {
+            "id": "medlineplus-blood-differential-2293d886dbb645767ad1789f",
+            "section": "What is a blood differential test?",
+            "sourceId": "medlineplus-blood-differential"
+          },
+          {
+            "id": "medlineplus-platelet-tests-b5307d826bca3ac7d41ad126",
+            "section": "What are platelet tests?",
+            "sourceId": "medlineplus-platelet-tests"
+          }
+        ]
+      },
+      "hybrid": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-blood-differential-78f0c88f4bd71fe4f58b61f8",
+            "section": "What is a blood differential test?",
+            "sourceId": "medlineplus-blood-differential"
+          },
+          {
+            "id": "medlineplus-white-blood-count-wbc-684a1271c545da98fc1caaac",
+            "section": "What is a white blood count (WBC)?",
+            "sourceId": "medlineplus-white-blood-count-wbc"
+          },
+          {
+            "id": "medlineplus-complete-blood-count-cbc-a985ba8dc87f113db2037fd3",
+            "section": "What is a Complete Blood Count?",
+            "sourceId": "medlineplus-complete-blood-count-cbc"
+          }
+        ]
+      },
+      "reranked": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-blood-differential-78f0c88f4bd71fe4f58b61f8",
+            "section": "What is a blood differential test?",
+            "sourceId": "medlineplus-blood-differential"
+          },
+          {
+            "id": "medlineplus-blood-differential-2293d886dbb645767ad1789f",
+            "section": "What is a blood differential test?",
+            "sourceId": "medlineplus-blood-differential"
+          },
+          {
+            "id": "medlineplus-white-blood-count-wbc-684a1271c545da98fc1caaac",
+            "section": "What is a white blood count (WBC)?",
+            "sourceId": "medlineplus-white-blood-count-wbc"
+          }
+        ]
+      },
+      "keywordTop3": [
+        "medlineplus-blood-differential-78f0c88f4bd71fe4f58b61f8",
+        "medlineplus-white-blood-count-wbc-684a1271c545da98fc1caaac",
+        "medlineplus-complete-blood-count-cbc-a985ba8dc87f113db2037fd3"
+      ],
+      "normalizedHybrid": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-blood-differential-78f0c88f4bd71fe4f58b61f8",
+            "section": "What is a blood differential test?",
+            "sourceId": "medlineplus-blood-differential"
+          },
+          {
+            "id": "medlineplus-white-blood-count-wbc-684a1271c545da98fc1caaac",
+            "section": "What is a white blood count (WBC)?",
+            "sourceId": "medlineplus-white-blood-count-wbc"
+          },
+          {
+            "id": "medlineplus-complete-blood-count-cbc-a985ba8dc87f113db2037fd3",
+            "section": "What is a Complete Blood Count?",
+            "sourceId": "medlineplus-complete-blood-count-cbc"
+          }
+        ]
+      },
+      "normalizedReranked": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-blood-differential-78f0c88f4bd71fe4f58b61f8",
+            "section": "What is a blood differential test?",
+            "sourceId": "medlineplus-blood-differential"
+          },
+          {
+            "id": "medlineplus-blood-differential-2293d886dbb645767ad1789f",
+            "section": "What is a blood differential test?",
+            "sourceId": "medlineplus-blood-differential"
+          },
+          {
+            "id": "medlineplus-white-blood-count-wbc-684a1271c545da98fc1caaac",
+            "section": "What is a white blood count (WBC)?",
+            "sourceId": "medlineplus-white-blood-count-wbc"
+          }
+        ]
+      }
+    },
+    {
+      "id": "wbc-limit",
+      "scenario": "short-or-paraphrased",
+      "question": "can the white cell count tell me the diagnosis on its own",
+      "expectedChunkIds": [
+        "medlineplus-white-blood-count-wbc-7daf1358673d3cc20099530b"
+      ],
+      "evidence": "The WBC uses passage explicitly addresses whether the count can confirm a diagnosis.",
+      "semantic": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-white-blood-count-wbc-7daf1358673d3cc20099530b",
+            "section": "What is it used for?",
+            "sourceId": "medlineplus-white-blood-count-wbc"
+          },
+          {
+            "id": "medlineplus-white-blood-count-wbc-684a1271c545da98fc1caaac",
+            "section": "What is a white blood count (WBC)?",
+            "sourceId": "medlineplus-white-blood-count-wbc"
+          },
+          {
+            "id": "medlineplus-blood-differential-78f0c88f4bd71fe4f58b61f8",
+            "section": "What is a blood differential test?",
+            "sourceId": "medlineplus-blood-differential"
+          }
+        ]
+      },
+      "hybrid": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-white-blood-count-wbc-7daf1358673d3cc20099530b",
+            "section": "What is it used for?",
+            "sourceId": "medlineplus-white-blood-count-wbc"
+          },
+          {
+            "id": "medlineplus-blood-differential-78f0c88f4bd71fe4f58b61f8",
+            "section": "What is a blood differential test?",
+            "sourceId": "medlineplus-blood-differential"
+          },
+          {
+            "id": "medlineplus-white-blood-count-wbc-684a1271c545da98fc1caaac",
+            "section": "What is a white blood count (WBC)?",
+            "sourceId": "medlineplus-white-blood-count-wbc"
+          }
+        ]
+      },
+      "reranked": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-white-blood-count-wbc-7daf1358673d3cc20099530b",
+            "section": "What is it used for?",
+            "sourceId": "medlineplus-white-blood-count-wbc"
+          },
+          {
+            "id": "medlineplus-complete-blood-count-cbc-2f52b0abb5d4328999514977",
+            "section": "Is there anything else I need to know about a complete blood count?",
+            "sourceId": "medlineplus-complete-blood-count-cbc"
+          },
+          {
+            "id": "medlineplus-mcv-mean-corpuscular-volume-e43aa3751dff899df96ee777",
+            "section": "What do the results mean?",
+            "sourceId": "medlineplus-mcv-mean-corpuscular-volume"
+          }
+        ]
+      },
+      "keywordTop3": [
+        "medlineplus-white-blood-count-wbc-7daf1358673d3cc20099530b",
+        "medlineplus-blood-differential-78f0c88f4bd71fe4f58b61f8",
+        "medlineplus-white-blood-count-wbc-684a1271c545da98fc1caaac"
+      ],
+      "normalizedHybrid": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-white-blood-count-wbc-7daf1358673d3cc20099530b",
+            "section": "What is it used for?",
+            "sourceId": "medlineplus-white-blood-count-wbc"
+          },
+          {
+            "id": "medlineplus-blood-differential-78f0c88f4bd71fe4f58b61f8",
+            "section": "What is a blood differential test?",
+            "sourceId": "medlineplus-blood-differential"
+          },
+          {
+            "id": "medlineplus-white-blood-count-wbc-684a1271c545da98fc1caaac",
+            "section": "What is a white blood count (WBC)?",
+            "sourceId": "medlineplus-white-blood-count-wbc"
+          }
+        ]
+      },
+      "normalizedReranked": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-white-blood-count-wbc-7daf1358673d3cc20099530b",
+            "section": "What is it used for?",
+            "sourceId": "medlineplus-white-blood-count-wbc"
+          },
+          {
+            "id": "medlineplus-complete-blood-count-cbc-2f52b0abb5d4328999514977",
+            "section": "Is there anything else I need to know about a complete blood count?",
+            "sourceId": "medlineplus-complete-blood-count-cbc"
+          },
+          {
+            "id": "medlineplus-mcv-mean-corpuscular-volume-e43aa3751dff899df96ee777",
+            "section": "What do the results mean?",
+            "sourceId": "medlineplus-mcv-mean-corpuscular-volume"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hb-alias",
+      "scenario": "short-or-paraphrased",
+      "question": "Hgb on my CBC, what exactly does it measure?",
+      "expectedChunkIds": [
+        "medlineplus-hemoglobin-test-0eedfa1d321ecbc624cf40da"
+      ],
+      "evidence": "The hemoglobin test measures the blood level of hemoglobin and lists Hgb as an alias.",
+      "semantic": {
+        "rank": 2,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-hemoglobin-test-f5b85db924aa18e136ebd15d",
+            "section": "What is it used for?",
+            "sourceId": "medlineplus-hemoglobin-test"
+          },
+          {
+            "id": "medlineplus-hemoglobin-test-0eedfa1d321ecbc624cf40da",
+            "section": "What is a Hemoglobin Test?",
+            "sourceId": "medlineplus-hemoglobin-test"
+          },
+          {
+            "id": "medlineplus-complete-blood-count-cbc-a985ba8dc87f113db2037fd3",
+            "section": "What is a Complete Blood Count?",
+            "sourceId": "medlineplus-complete-blood-count-cbc"
+          }
+        ]
+      },
+      "hybrid": {
+        "rank": 2,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-hemoglobin-test-f5b85db924aa18e136ebd15d",
+            "section": "What is it used for?",
+            "sourceId": "medlineplus-hemoglobin-test"
+          },
+          {
+            "id": "medlineplus-hemoglobin-test-0eedfa1d321ecbc624cf40da",
+            "section": "What is a Hemoglobin Test?",
+            "sourceId": "medlineplus-hemoglobin-test"
+          },
+          {
+            "id": "medlineplus-complete-blood-count-cbc-a985ba8dc87f113db2037fd3",
+            "section": "What is a Complete Blood Count?",
+            "sourceId": "medlineplus-complete-blood-count-cbc"
+          }
+        ]
+      },
+      "reranked": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-hemoglobin-test-0eedfa1d321ecbc624cf40da",
+            "section": "What is a Hemoglobin Test?",
+            "sourceId": "medlineplus-hemoglobin-test"
+          },
+          {
+            "id": "medlineplus-complete-blood-count-cbc-a985ba8dc87f113db2037fd3",
+            "section": "What is a Complete Blood Count?",
+            "sourceId": "medlineplus-complete-blood-count-cbc"
+          },
+          {
+            "id": "medlineplus-hemoglobin-test-f5b85db924aa18e136ebd15d",
+            "section": "What is it used for?",
+            "sourceId": "medlineplus-hemoglobin-test"
+          }
+        ]
+      },
+      "keywordTop3": [
+        "medlineplus-hemoglobin-test-f5b85db924aa18e136ebd15d",
+        "medlineplus-hemoglobin-test-0eedfa1d321ecbc624cf40da",
+        "medlineplus-complete-blood-count-cbc-a985ba8dc87f113db2037fd3"
+      ],
+      "normalizedHybrid": {
+        "rank": 3,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-hemoglobin-test-f5b85db924aa18e136ebd15d",
+            "section": "What is it used for?",
+            "sourceId": "medlineplus-hemoglobin-test"
+          },
+          {
+            "id": "medlineplus-complete-blood-count-cbc-a985ba8dc87f113db2037fd3",
+            "section": "What is a Complete Blood Count?",
+            "sourceId": "medlineplus-complete-blood-count-cbc"
+          },
+          {
+            "id": "medlineplus-hemoglobin-test-0eedfa1d321ecbc624cf40da",
+            "section": "What is a Hemoglobin Test?",
+            "sourceId": "medlineplus-hemoglobin-test"
+          }
+        ]
+      },
+      "normalizedReranked": {
+        "rank": 1,
+        "sourceHitAt3": true,
+        "top": [
+          {
+            "id": "medlineplus-hemoglobin-test-0eedfa1d321ecbc624cf40da",
+            "section": "What is a Hemoglobin Test?",
+            "sourceId": "medlineplus-hemoglobin-test"
+          },
+          {
+            "id": "medlineplus-hemoglobin-test-f5b85db924aa18e136ebd15d",
+            "section": "What is it used for?",
+            "sourceId": "medlineplus-hemoglobin-test"
+          },
+          {
+            "id": "medlineplus-complete-blood-count-cbc-a985ba8dc87f113db2037fd3",
+            "section": "What is a Complete Blood Count?",
+            "sourceId": "medlineplus-complete-blood-count-cbc"
+          }
+        ]
+      }
+    }
+  ]
+}

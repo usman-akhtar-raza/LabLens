@@ -1,0 +1,44 @@
+[
+  {
+    "id": "wbc-en",
+    "question": "What does a white blood cell count measure?",
+    "expectedChunkIds": ["medlineplus-white-blood-count-wbc-684a1271c545da98fc1caaac", "medlineplus-complete-blood-count-cbc-a985ba8dc87f113db2037fd3"],
+    "evidence": "Explicitly states that the count measures the total number of white blood cells."
+  },
+  {
+    "id": "mcv-en",
+    "question": "What does MCV measure?",
+    "expectedChunkIds": ["medlineplus-mcv-mean-corpuscular-volume-25d79eb158abfc89365f848f", "medlineplus-complete-blood-count-cbc-a985ba8dc87f113db2037fd3", "medlineplus-complete-blood-count-cbc-12265eb015829f98de232c5c"],
+    "evidence": "Defines MCV as the average size of red blood cells."
+  },
+  {
+    "id": "hba1c-en",
+    "question": "Is a hemoglobin test the same as an HbA1c test?",
+    "expectedChunkIds": ["medlineplus-hemoglobin-test-f5b85db924aa18e136ebd15d"],
+    "evidence": "Directly distinguishes the two tests and explains what HbA1c checks."
+  },
+  {
+    "id": "platelets-ur",
+    "question": "Platelets khoon mein kya kaam kartay hain?",
+    "expectedChunkIds": ["medlineplus-platelet-tests-b5307d826bca3ac7d41ad126", "medlineplus-complete-blood-count-cbc-a985ba8dc87f113db2037fd3"],
+    "evidence": "Explains that platelets help blood clot."
+  },
+  {
+    "id": "wbc-ur",
+    "question": "WBC ka matlab kya hai aur yeh test kya measure karta hai?",
+    "expectedChunkIds": ["medlineplus-white-blood-count-wbc-684a1271c545da98fc1caaac"],
+    "evidence": "Connects WBC to white blood cells and defines what the count measures."
+  },
+  {
+    "id": "reference-range-en",
+    "question": "Which reference range should I use to understand my lab result?",
+    "expectedChunkIds": ["medlineplus-how-to-understand-your-lab-results-7ce5fe9052c170f5a4ce9912"],
+    "evidence": "Explicitly says to use the reference range listed on the lab report."
+  },
+  {
+    "id": "wbc-citation-regression",
+    "question": "WBC ka matlab kya hai?",
+    "expectedChunkIds": ["medlineplus-white-blood-count-wbc-684a1271c545da98fc1caaac"],
+    "evidence": "Defines WBC directly. The section on diagnostic limitations is not a definition."
+  }
+]
