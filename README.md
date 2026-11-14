@@ -102,3 +102,16 @@ This runs five synthetic English/Roman Urdu cases covering cited answers, person
 The dev and build scripts use Webpack with Tailwind's PostCSS integration because this environment blocks Turbopack's helper-process port binding.
 
 The initial dependency audit reports 8 moderate findings in the development linting dependency chain (`minimatch` through TypeScript ESLint). The reported remediation includes a major ESLint-config downgrade; it has not been applied automatically. Review compatible upstream updates before publishing.
+
+## Local voice input
+
+For the local dev server on macOS, install FFmpeg and whisper.cpp and download the multilingual Whisper base model once:
+
+```bash
+brew install ffmpeg whisper-cpp
+mkdir -p .whisper
+curl -fL https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-base.bin -o .whisper/ggml-base.bin
+PATH="/opt/homebrew/bin:$PATH" npm run dev -- --hostname localhost
+```
+
+Open http://localhost:3000. Use **Record question**, then **Stop recording**. The transcript appears in the existing composer for editing before you send it. Select Roman Urdu for a cited Roman Urdu answer. The recording is processed by local binaries and temporary audio is removed after the request. Sending the transcript uses the existing answer API and its configured services. Optional overrides are `FFMPEG_BIN`, `WHISPER_BIN`, and `WHISPER_MODEL_PATH`.

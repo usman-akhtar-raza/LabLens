@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import type { FormEvent, KeyboardEvent } from "react";
 import type { Answer, Language } from "@/lib/rag/answer-contract";
 
+import { VoiceInput } from "./voice-input";
+
 type Exchange = { id: string; question: string; answer?: Answer };
 const examples = [
   { label: "Understand WBC", question: "WBC ka matlab kya hai?", icon: "01" },
@@ -31,6 +33,7 @@ function AnswerView({ answer, id }: { answer: Answer; id: string }) {
 
 export default function Chat() {
   const [language, setLanguage] = useState<Language>("roman-urdu");
+  const [voiceSession, setVoiceSession] = useState(0);
   const [input, setInput] = useState("");
   const [exchanges, setExchanges] = useState<Exchange[]>([]);
   const [pending, setPending] = useState(false);
@@ -70,6 +73,7 @@ export default function Chat() {
     if (event.key === "Enter" && !event.shiftKey && !event.nativeEvent.isComposing) { event.preventDefault(); void send(input); }
   }
   function clear() {
+    setVoiceSession((previous) => previous + 1);
     controller.current?.abort(); controller.current = null; setPending(false); setExchanges([]); setError(""); setInput(""); inputRef.current?.focus();
   }
 
@@ -88,7 +92,10 @@ export default function Chat() {
             {error && <div className="chat-error" role="alert"><p>{error}</p><button onClick={() => void send(lastQuestion.current, true)}>Dobara try karein ↗</button></div>}
             <div ref={bottom} />
           </section>
-          <div className="composer-area"><form className="composer" onSubmit={submit}><label className="sr-only" htmlFor="question">Your CBC question</label><textarea ref={inputRef} id="question" placeholder="Misal: WBC ka matlab kya hai?" value={input} onChange={(event) => setInput(event.target.value)} onKeyDown={keyboard} maxLength={1000} rows={2} disabled={pending} /><div className="composer-footer"><span>Har sawal mukammal likhein <span aria-hidden="true">·</span> {input.length}/1000</span><button className="send" type="submit" aria-label="Send question" disabled={pending || !input.trim()}><span>Ask LabLens</span><span aria-hidden="true">↑</span></button></div></form><p className="privacy-note">Sawal OpenAI ko processing ke liye bheja jata hai. Personal reports ya identifying details share na karein.</p></div>
+          <div className="composer-area"><form className="composer" onSubmit={submit}><label className="sr-only" htmlFor="question">Your CBC question</label><textarea ref={inputRef} id="question" placeholder="Misal: WBC ka matlab kya hai?" value={input} onChange={(event) => setInput(event.target.value)} onKeyDown={keyboard} maxLength={1000} rows={2} disabled={pending} />{process.env.NODE_ENV === "development" && !pending && <VoiceInput key={voiceSession} onTranscript={(text) => {
+            setInput(text);
+            inputRef.current?.focus();
+          }} />}<div className="composer-footer"><span>Har sawal mukammal likhein <span aria-hidden="true">·</span> {input.length}/1000</span><button className="send" type="submit" aria-label="Send question" disabled={pending || !input.trim()}><span>Ask LabLens</span><span aria-hidden="true">↑</span></button></div></form><p className="privacy-note">Sawal OpenAI ko processing ke liye bheja jata hai. Personal reports ya identifying details share na karein.</p></div>
         </main>
       </div>
       <footer className="app-footer"><span>Clarity, with a source.</span><span>AI-generated explanations · Verify important information with a clinician.</span></footer>
