@@ -30,9 +30,7 @@ function tokens(text: string) {
 }
 
 async function retrieveKeywordChunks(question: string, supabase: Parameters<typeof retrieveChunks>[1]["supabase"], normalizeKeywords: boolean) {
-  const terms = [...new Set(tokens(question).map((term) =>
-    normalizeKeywords && Object.hasOwn(keywordAliases, term) ? keywordAliases[term] : term,
-  ))];
+  const terms = keywordTerms(question, normalizeKeywords);
   if (!terms.length) return [];
 
   // Read the current reference corpus without transferring its vectors.
@@ -77,6 +75,12 @@ async function retrieveKeywordChunks(question: string, supabase: Parameters<type
     .sort((a, b) => b.score - a.score || a.passage.chunk_id.localeCompare(b.passage.chunk_id))
     .slice(0, hybridCandidateLimit)
     .map(({ passage }) => passage);
+}
+
+export function keywordTerms(text: string, normalize = true) {
+  return [...new Set(tokens(text).map((term) =>
+    normalize && Object.hasOwn(keywordAliases, term) ? keywordAliases[term] : term,
+  ))];
 }
 
 type Passage = z.infer<typeof passageSchema>;

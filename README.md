@@ -72,7 +72,7 @@ These commands contact external APIs; embedding generation/search uses the OpenA
 
 The search command returns retrieved passages, citations and cosine similarity, not a generated medical answer. Similarity is not a clinical confidence score. `rag:check` runs six fixed queries and writes `data/evaluation/retrieval-smoke.json`; expected-source presence in the top three is a smoke test, not a general retrieval or clinical benchmark.
 
-`rag:compare-search` compares semantic, hybrid, and reranked hybrid results on the same seven passage cases. Passage Hit@1 checks the first result against the labelled passage IDs. Source-level Hit@3 checks whether any of the first three passages comes from a source associated with those labels.
+`rag:compare-search` compares semantic, hybrid, hybrid with the OpenAI reranker, and hybrid with the TypeScript reranker on the same seven passage cases. Passage Hit@1 checks the first result against the labelled passage IDs. Source-level Hit@3 checks whether any of the first three passages comes from a source associated with those labels.
 
 ## Next milestone
 
@@ -83,7 +83,7 @@ Initial scope is educational CBC terminology. Personal report interpretation, di
 
 ## Chat and answer API
 
-`POST /api/ask` accepts `{ "question": "WBC ka matlab kya hai?", "language": "roman-urdu" }`. Language can also be `english`; questions are limited to 1000 characters. The route runs semantic search and BM25 over the stored title, section, and passage text, then merges up to 20 candidates from each ranking with equal-weight Reciprocal Rank Fusion. A separate model call reranks the first ten passages for direct evidence. If that call fails or times out, chat uses the original hybrid order. The route passes the first five distinct passages to the answer model and constructs citations from the server-side records. Unknown citation IDs or uncited answer paragraphs are replaced by an insufficient-evidence response. Non-answer statuses use controlled messages. Citation provenance and claim support are evaluated separately.
+`POST /api/ask` accepts `{ "question": "WBC ka matlab kya hai?", "language": "roman-urdu" }`. Language can also be `english`; questions are limited to 1000 characters. The route runs semantic search and BM25 over the stored title, section, and passage text, then merges up to 20 candidates from each ranking with equal-weight Reciprocal Rank Fusion. Live chat reranks the first ten passages with local TypeScript rules based on term matches and section intent. Ties keep the original hybrid order. The comparison script also runs the original OpenAI reranker on the same candidates and makes paid API calls. The route passes the first five distinct passages to the answer model and constructs citations from the server-side records. Unknown citation IDs or uncited answer paragraphs are replaced by an insufficient-evidence response. Non-answer statuses use controlled messages. Citation provenance and claim support are evaluated separately.
 
 The UI defaults to Roman Urdu and shows plain-text explanations, numbered citation buttons, original English passages and MedlinePlus links. Chat lives only in component memory and resets on reload or New chat. Each question is independent: prior messages are not sent to the model. Ask complete questions rather than context-dependent follow-ups. Generation uses `store: false`; questions still travel to OpenAI for embedding/answer generation and vectors to Supabase for search.
 
@@ -115,3 +115,5 @@ PATH="/opt/homebrew/bin:$PATH" npm run dev -- --hostname localhost
 ```
 
 Open http://localhost:3000. Use **Record question**, then **Stop recording**. The transcript appears in the existing composer for editing before you send it. Select Roman Urdu for a cited Roman Urdu answer. The recording is processed by local binaries and temporary audio is removed after the request. Sending the transcript uses the existing answer API and its configured services. Optional overrides are `FFMPEG_BIN`, `WHISPER_BIN`, and `WHISPER_MODEL_PATH`.
+
+Voice input defaults to Urdu (`ur`) for Urdu-led questions with English terms. To change it, set `WHISPER_LANGUAGE=auto` for language detection or `WHISPER_LANGUAGE=en` for English in `.env.local`, then restart `npm run dev`. Set it to `ur` to switch back. Whisper transcribes in the source language and may write Urdu in Urdu script. The answer language is selected separately in the chat.

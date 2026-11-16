@@ -3,6 +3,7 @@ import { mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join, resolve } from "node:path";
 import { promisify } from "node:util";
+import { toRomanUrdu } from "@/lib/server/roman-urdu";
 
 const run = promisify(execFile);
 const loopback = new Set(["localhost", "127.0.0.1", "[::1]"]);
@@ -62,13 +63,14 @@ export async function POST(request: Request) {
     }
     await run(process.env.WHISPER_BIN || "whisper-cli", [
       "-m", resolve(process.env.WHISPER_MODEL_PATH || ".whisper/ggml-base.bin"),
-      "-f", wav, "-l", "auto", "-nt", "-otxt", "-of", output,
+      "-f", wav, "-l", process.env.WHISPER_LANGUAGE?.trim() || "ur",
+      "-nt", "-otxt", "-of", output,
     ], { timeout: 60000, signal: request.signal });
     const text = (await readFile(`${output}.txt`, "utf8")).trim();
     if (!text || !/[\p{L}\p{N}]/u.test(text.replace(/\[[^\]]*\]|\([^)]*\)/g, ""))) {
       return reply({ error: "Koi alfaaz samajh nahi aaye. Dobara record karein." }, 422);
     }
-    return reply({ text: text.slice(0, 1000) });
+    return reply({ text: toRomanUrdu(text).slice(0, 1000) });
   } catch {
     return reply({ error: "Local transcription nahi ho saki. Whisper setup check karein ya sawal type karein." }, 503);
   } finally {
