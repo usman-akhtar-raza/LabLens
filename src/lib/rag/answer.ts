@@ -2,17 +2,15 @@ import type OpenAI from "openai";
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { zodTextFormat } from "openai/helpers/zod";
 import { retrieveRankings } from "./hybrid.ts";
-import { rerankPassages } from "./rerank.ts";
+import { rerankWithRules } from "./custom-rerank.ts";
 import { attachCitations, generatedAnswerSchema, insufficientAnswer } from "./answer-contract.ts";
 import type { Language } from "./answer-contract.ts";
 
 export async function answerQuestion(question: string, language: Language,
   clients: { openai: OpenAI; supabase: SupabaseClient }, signal?: AbortSignal) {
   const { hybrid } = await retrieveRankings(question, clients);
-  const ranked = await rerankPassages(question, hybrid, clients.openai, signal).catch(() => {
-    signal?.throwIfAborted();
-    return hybrid;
-  });
+  signal?.throwIfAborted();
+  const ranked = rerankWithRules(question, hybrid);
   const matches = ranked.slice(0, 5);
   if (!matches.length) return insufficientAnswer(language);
   const sources = matches.map((match, index) => ({ id: index + 1, title: match.source_title,

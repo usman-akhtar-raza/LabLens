@@ -4,14 +4,17 @@ import type { ReferenceChunk } from "../src/lib/rag/schema.ts";
 import { fusionConstant, hybridCandidateLimit, retrieveRankings } from "../src/lib/rag/hybrid.ts";
 import { EMBEDDING_MODEL } from "../src/lib/rag/embeddings.ts";
 import { rerankCandidateLimit, rerankModel, rerankPassages } from "../src/lib/rag/rerank.ts";
+import { customRerankCandidateLimit, rerankWithRules } from "../src/lib/rag/custom-rerank.ts";
 import { createClients, reportFailure } from "./ai-runtime.mts";
 
 type EvalCase = { id: string; question: string; expectedChunkIds: string[]; evidence: string; scenario?: string };
 type RankingSummary = { rank: number | null; sourceHitAt3: boolean; top: { id: string; section: string; sourceId: string }[] };
 type EvalResult = EvalCase & {
   semantic: RankingSummary; hybrid: RankingSummary; reranked: RankingSummary; keywordTop3: string[];
+  customReranked: RankingSummary;
   normalizedHybrid?: RankingSummary;
   normalizedReranked?: RankingSummary;
+  normalizedCustomReranked?: RankingSummary;
 };
 const evalDirectory = new URL("../data/evaluation/", import.meta.url);
 const resultLimit = 3;
@@ -64,8 +67,12 @@ async function compare() {
     };
     const result = {
       ...item, semantic: summarize(semantic), hybrid: summarize(hybrid), reranked: summarize(reranked),
+      customReranked: summarize(rerankWithRules(item.question, hybrid)),
       keywordTop3: keyword.slice(0, resultLimit).map(({ chunk_id }) => chunk_id),
-      ...(normalized && { normalizedHybrid: summarize(normalized.hybrid) }),
+      ...(normalized && {
+        normalizedHybrid: summarize(normalized.hybrid),
+        normalizedCustomReranked: summarize(rerankWithRules(item.question, normalized.hybrid)),
+      }),
       ...(normalizedReranked && { normalizedReranked: summarize(normalizedReranked) }),
     };
     results.push(result);
@@ -86,6 +93,7 @@ async function compare() {
     semantic: metrics(subset.map((item) => item.semantic)),
     hybrid: metrics(subset.map((item) => item.hybrid)),
     reranked: metrics(subset.map((item) => item.reranked)),
+    customReranked: metrics(subset.map((item) => item.customReranked)),
     ...(userStyle && {
       normalizedHybrid: metrics(subset.map((item) => {
         assert.ok(item.normalizedHybrid);
@@ -94,6 +102,10 @@ async function compare() {
       normalizedReranked: metrics(subset.map((item) => {
         assert.ok(item.normalizedReranked);
         return item.normalizedReranked;
+      })),
+      normalizedCustomReranked: metrics(subset.map((item) => {
+        assert.ok(item.normalizedCustomReranked);
+        return item.normalizedCustomReranked;
       })),
     }),
   });
@@ -111,6 +123,7 @@ async function compare() {
     corpusChunks: chunks.length,
     hybrid: { keyword: "BM25", fusion: "equal-weight reciprocal rank fusion", fusionConstant, candidateLimit: hybridCandidateLimit },
     reranker: { model: rerankModel, candidateLimit: rerankCandidateLimit },
+    customReranker: { type: "TypeScript rules", candidateLimit: customRerankCandidateLimit },
     ...breakdown,
     allQuestions,
     results,

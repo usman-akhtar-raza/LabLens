@@ -1,3 +1,4 @@
+import OpenAI from "openai";
 import { askSchema } from "@/lib/rag/answer-contract";
 import { answerQuestion } from "@/lib/rag/answer";
 import { getServerClients } from "@/lib/server/clients";
@@ -51,6 +52,12 @@ export async function POST(request: Request) {
     // Do not log prompts, credentials, SDK error objects, or medical questions.
     if (error instanceof Error && error.message === "SERVER_CONFIGURATION_MISSING") {
       return json({ error: "Server ki API configuration missing hai. .env.local check karein." }, 503);
+    }
+    if (error instanceof OpenAI.APIError && error.status === 401) {
+      const message = process.env.NODE_ENV === "development"
+        ? "OpenAI API key reject ho gayi. .env.local mein valid OPENAI_API_KEY set karke dev server restart karein."
+        : "Jawab dene wali service filhaal available nahi hai.";
+      return json({ error: message }, 503);
     }
     return json({ error: "Jawab generate nahi ho saka. Thori dair baad dobara try karein." }, 502);
   } finally { active--; }
