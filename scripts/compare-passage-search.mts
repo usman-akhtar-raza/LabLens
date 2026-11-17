@@ -35,7 +35,8 @@ async function compare() {
 
   const clients = createClients();
   const { data: stored, error, count } = await clients.supabase.from("lablens_chunks")
-    .select("id,content,embedding_text,embedding_model", { count: "exact" });
+    .select("id,content,embedding_text,embedding_model", { count: "exact" })
+    .in("source_id", [...new Set(chunks.map(({ sourceId }) => sourceId))]);
   if (error || count !== chunks.length || stored?.length !== chunks.length || stored.some((row) => {
     const local = byId.get(row.id);
     return !local || local.text !== row.content || local.embeddingText !== row.embedding_text || row.embedding_model !== EMBEDDING_MODEL;
@@ -52,12 +53,10 @@ async function compare() {
       normalized && rerankPassages(item.question, normalized.hybrid, clients.openai),
     ]);
     const expectedSources = new Set(item.expectedChunkIds.map((id) => byId.get(id)?.sourceId));
-    const summarize = (ranking: { chunk_id: string }[]): RankingSummary => {
-      const top = ranking.slice(0, resultLimit).map(({ chunk_id: id }) => {
-        const chunk = byId.get(id);
-        assert.ok(chunk, `Unexpected passage returned by search: ${id}`);
-        return { id, section: chunk.section, sourceId: chunk.sourceId };
-      });
+    const summarize = (ranking: { chunk_id: string; section: string; source_id: string }[]): RankingSummary => {
+      const top = ranking.slice(0, resultLimit).map(({ chunk_id: id, section, source_id: sourceId }) => ({
+        id, section, sourceId,
+      }));
       const rank = top.findIndex(({ id }) => item.expectedChunkIds.includes(id));
       return {
         rank: rank === -1 ? null : rank + 1,

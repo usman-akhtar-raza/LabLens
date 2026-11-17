@@ -117,3 +117,22 @@ PATH="/opt/homebrew/bin:$PATH" npm run dev -- --hostname localhost
 Open http://localhost:3000. Use **Record question**, then **Stop recording**. The transcript appears in the existing composer for editing before you send it. Select Roman Urdu for a cited Roman Urdu answer. The recording is processed by local binaries and temporary audio is removed after the request. Sending the transcript uses the existing answer API and its configured services. Optional overrides are `FFMPEG_BIN`, `WHISPER_BIN`, and `WHISPER_MODEL_PATH`.
 
 Voice input defaults to Urdu (`ur`) for Urdu-led questions with English terms. To change it, set `WHISPER_LANGUAGE=auto` for language detection or `WHISPER_LANGUAGE=en` for English in `.env.local`, then restart `npm run dev`. Set it to `ur` to switch back. Whisper transcribes in the source language and may write Urdu in Urdu script. The answer language is selected separately in the chat.
+
+## Ingest a new reference
+
+Use this admin CLI with manually checked, public MedlinePlus medical-test excerpts relevant to CBC education. Supply the canonical page URL, source title and the date you checked the page. Keep the local files alongside your own source records for future verification. The CLI accepts UTF-8 Markdown or plain text up to 128 KiB. Markdown headings split the text into sections, while plain text uses the same word-window chunker under one section.
+
+```bash
+npm run reference:ingest -- data/references/examples/reticulocyte-count.txt \
+  --title "Reticulocyte Count" \
+  --url https://medlineplus.gov/lab-tests/reticulocyte-count/ \
+  --accessed-on 2026-11-17 --topic "Red blood cells" --dry-run
+```
+
+Remove `--dry-run` to generate embeddings and add the source to the configured Supabase project. Live chat picks it up on the next request. An identical retry reuses stored vectors. An edited version of an indexed source needs explicit replacement, and a failed chunk write can be retried with the original file. The curated seed manifest remains separate from new references.
+
+```bash
+npm run reference:check -- medlineplus-reticulocyte-count "Retic count kya measure karta hai?"
+```
+
+Run the check with `--before` before the first ingestion to confirm that none of the retrieval paths returns the new source. After ingestion, it checks that semantic, BM25, hybrid, and both rerankers return the source in the top three. Both rerankers receive the same top ten hybrid candidates. Ask the same question in the chat UI and open its citation to check the original passage.

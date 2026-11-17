@@ -19,7 +19,9 @@
     "rag:check": "node --experimental-strip-types scripts/check-retrieval.mts",
     "rag:compare-search": "node --experimental-strip-types scripts/compare-passage-search.mts",
     "rag:check-answers": "node --experimental-strip-types scripts/check-answers.mts",
-    "test:rag": "node --experimental-strip-types --test src/lib/rag/*.test.mts"
+    "test:rag": "node --experimental-strip-types --test src/lib/rag/*.test.mts",
+    "reference:ingest": "node --experimental-strip-types scripts/ingest-reference.mts",
+    "reference:check": "node --experimental-strip-types scripts/check-ingested-reference.mts"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.119.0",

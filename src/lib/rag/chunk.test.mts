@@ -78,3 +78,22 @@ test("manifest rejects duplicate sources, traversal paths, and unapproved source
     assert.equal(manifestSchema.safeParse({ version: 1, sources: [{ ...manifest.sources[0], ...changes }] }).success, false);
   }
 });
+
+test("dynamic Markdown preserves original offsets, ignores fenced headings and keeps introductory text", () => {
+  const content = "\uFEFF# Reference\r\n\r\nIntro 🩸.\r\n\r\n### Details ###\r\n```text\r\n## Literal\r\n```\r\nMore text.";
+  const document = { ...documents[0], content, contentSha256: sha256(content) };
+  const chunks = chunkDocument(document, undefined, "markdown");
+  assert.deepEqual(chunks.map(({ section }) => section), ["Reference", "Details"]);
+  assert.equal(chunks[0].text, "Intro 🩸.");
+  assert.match(chunks[1].text, /## Literal/);
+  for (const chunk of chunks) assert.equal(content.slice(chunk.startOffset, chunk.endOffset), chunk.text);
+});
+
+test("dynamic plain text keeps literal headings and produces stable IDs across retries", () => {
+  const content = "Plain text.\n\n# This is literal text.";
+  const document = { ...documents[0], content, contentSha256: sha256(content) };
+  const chunks = chunkDocument(document, undefined, "text");
+  assert.equal(chunks[0].section, "Reference text");
+  assert.equal(chunks[0].text, content);
+  assert.deepEqual(chunks, chunkDocument(document, undefined, "text"));
+});
