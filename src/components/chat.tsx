@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import type { FormEvent, KeyboardEvent } from "react";
 import type { Answer, Language } from "@/lib/rag/answer-contract";
@@ -79,10 +80,10 @@ export default function Chat() {
 
   return (
     <div className="app-shell">
-      <header className="app-header"><a className="brand" href="/" aria-label="LabLens home"><span className="brand-icon" aria-hidden="true">L<span>+</span></span>LabLens<span className="brand-dot">.</span></a><div className="header-right"><span className="educational-badge"><span /> Educational preview</span><button className="new-chat" onClick={clear}>＋ New chat</button></div></header>
+      <header className="app-header"><Link className="brand" href="/" aria-label="LabLens home"><span className="brand-icon" aria-hidden="true">L<span>+</span></span>LabLens<span className="brand-dot">.</span></Link><div className="header-right">{process.env.NODE_ENV === "development" && <Link className="new-chat" href="/ingest">Upload reference</Link>}<span className="educational-badge"><span /> Educational preview</span><button className="new-chat" onClick={clear}>＋ New chat</button></div></header>
       <div className="workspace">
         <aside className="sidebar"><p className="eyebrow">A LITTLE CLARITY GOES A LONG WAY</p><h1>Your lab terms,<br /><span>made clearer.</span></h1><p className="sidebar-description">Explore the language of a complete blood count, with explanations you can trace back to the source.</p>
-          <div className="library-card"><div className="library-heading"><span className="library-icon" aria-hidden="true">▤</span><span>Your reference library</span></div><p>MedlinePlus · National Library of Medicine</p><div className="library-stats"><span><strong>10</strong> references</span><span><strong>CBC</strong> focused</span></div><div className="topic-list">{["RBC & WBC", "Hemoglobin", "Platelets", "MCV & RDW", "Reference ranges"].map((topic) => <span key={topic}>{topic}</span>)}</div></div>
+          <div className="library-card"><div className="library-heading"><span className="library-icon" aria-hidden="true">▤</span><span>Your reference library</span></div><p>MedlinePlus · National Library of Medicine</p><div className="library-stats"><span><strong>Curated</strong> references</span><span><strong>CBC</strong> focused</span></div><div className="topic-list">{["RBC & WBC", "Hemoglobin", "Platelets", "MCV & RDW", "Reference ranges"].map((topic) => <span key={topic}>{topic}</span>)}</div></div>
           <div className="scope-note"><span aria-hidden="true">ⓘ</span><p>For understanding terminology. A clinician should interpret personal results and advise on treatment.</p></div>
         </aside>
         <main className="chat-panel"><div className="chat-topline"><span><span className="tiny-spark" aria-hidden="true">✦</span> CBC companion</span><label className="language-control">Answer in<select aria-label="Answer language" value={language} onChange={(event) => setLanguage(event.target.value as Language)} disabled={pending}><option value="roman-urdu">Roman Urdu</option><option value="english">English</option></select></label></div>
