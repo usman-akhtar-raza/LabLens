@@ -32,10 +32,11 @@ export default function ReferenceUpload() {
   return <main className="upload-page">
     <Link href="/">← Back to LabLens chat</Link>
     <h1>Add a reference</h1>
-    <p>Verified MedlinePlus medical-test excerpts upload karein. File UTF-8 Markdown ya text mein ho, maximum 128 KiB.</p>
+    <p>Verified MedlinePlus medical-test excerpts upload karein. PDF, Word (.doc/.docx), Markdown ya text file select karein. PDF/Word limit 5 MiB, Markdown/text limit 128 KiB hai.</p>
+    <p>Scanned PDF ke liye pehle OCR karein taake text extract ho sake.</p>
     <form onSubmit={submit} aria-busy={pending}>
       <fieldset disabled={pending}>
-        <label>Reference file<input name="file" type="file" accept=".md,.txt" required /></label>
+        <label>Reference file<input name="file" type="file" accept=".md,.txt,.pdf,.doc,.docx" required /></label>
         <label>Source title<input name="title" required maxLength={250} placeholder="Reticulocyte Count" /></label>
         <label>Source URL<input name="url" type="url" required placeholder="https://medlineplus.gov/lab-tests/reticulocyte-count/" /></label>
         <label>Date you checked the source<input name="accessedOn" type="date" required /></label>
