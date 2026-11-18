@@ -136,3 +136,9 @@ npm run reference:check -- medlineplus-reticulocyte-count "Retic count kya measu
 ```
 
 Run the check with `--before` before the first ingestion to confirm that none of the retrieval paths returns the new source. After ingestion, it checks that semantic, BM25, hybrid, and both rerankers return the source in the top three. Both rerankers receive the same top ten hybrid candidates. Ask the same question in the chat UI and open its citation to check the original passage.
+
+### Upload from the local app
+
+Run `npm run dev` and choose **Upload reference** in the chat header, or visit `http://localhost:3000/ingest`. Select a UTF-8 `.md` or `.txt` file, enter the source title, canonical MedlinePlus medical-test URL, and the date you checked the source. Topics are optional. **Ingest reference** shows the indexed chunk count and the number of newly generated embeddings. An unchanged retry reports zero new embeddings.
+
+The upload page and endpoint are available on local development hosts. They use the same validation, chunker and storage pipeline as the CLI, and the existing server-side API credentials. The original file is processed in memory. Keep your own copy of the source file for later re-ingestion.
