@@ -8,6 +8,7 @@ const rankingSchema = z.object({ rankedIds: z.array(z.number().int()) });
 
 export async function rerankPassages<T extends { source_title: string; section: string; content: string }>(
   question: string, hybrid: T[], openai: OpenAI, signal?: AbortSignal,
+  onUsage?: (usage: { inputTokens: number; cachedInputTokens: number; outputTokens: number }) => void,
 ): Promise<T[]> {
   if (hybrid.length < 2) return hybrid;
   const candidates = hybrid.slice(0, rerankCandidateLimit);
@@ -25,6 +26,11 @@ export async function rerankPassages<T extends { source_title: string; section: 
     }),
     text: { format: zodTextFormat(rankingSchema, "passage_ranking") },
   }, { signal, timeout: 8000, maxRetries: 0 });
+  if (response.usage) onUsage?.({
+    inputTokens: response.usage.input_tokens,
+    cachedInputTokens: response.usage.input_tokens_details.cached_tokens,
+    outputTokens: response.usage.output_tokens,
+  });
   const ids = response.output_parsed?.rankedIds;
   if (response.status !== "completed" || !ids || ids.length !== candidates.length
     || new Set(ids).size !== candidates.length || ids.some((id) => id < 1 || id > candidates.length)) {
