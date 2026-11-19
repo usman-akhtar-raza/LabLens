@@ -139,6 +139,18 @@ Run the check with `--before` before the first ingestion to confirm that none of
 
 ### Upload from the local app
 
-Run `npm run dev` and choose **Upload reference** in the chat header, or visit `http://localhost:3000/ingest`. Select a UTF-8 `.md` or `.txt` file, enter the source title, canonical MedlinePlus medical-test URL, and the date you checked the source. Topics are optional. **Ingest reference** shows the indexed chunk count and the number of newly generated embeddings. An unchanged retry reports zero new embeddings.
+Run `npm run dev` and choose **Upload reference** in the chat header, or visit `http://localhost:3000/ingest`. Select a `.pdf`, `.doc`, `.docx`, UTF-8 `.md` or `.txt` file, enter the source title, canonical MedlinePlus medical-test URL, and the date you checked the source. Topics are optional. **Ingest reference** shows the indexed chunk count and the number of newly generated embeddings. An unchanged retry reports zero new embeddings.
 
 The upload page and endpoint are available on local development hosts. They use the same validation, chunker and storage pipeline as the CLI, and the existing server-side API credentials. The original file is processed in memory. Keep your own copy of the source file for later re-ingestion.
+
+### PDF and Word references
+
+The upload form and `reference:ingest` CLI also accept `.pdf`, legacy `.doc`, and `.docx` files up to 5 MiB. Markdown/text limits remain 128 KiB. Text is extracted locally with `pdf-parse` and `word-extractor`, with no document parsing API. PDFs are limited to 100 pages, extraction has a 30-second timeout, and extracted text is limited to 128 KiB. Scanned/image-only PDFs need OCR before upload. Password-protected and malformed documents return an error.
+
+The extracted body follows the existing text chunking, embeddings, search and citation flow. Source metadata still requires a verified MedlinePlus medical-test URL. Citations show extracted text, so PDF/Word offsets refer to the extracted text rather than the original binary file. Metadata records the original file hash and extraction format. An indexed source with different extracted text requires explicit replacement.
+
+```bash
+npm run reference:ingest -- /path/to/reference.pdf \
+  --title "Source title" --url https://medlineplus.gov/lab-tests/source-page/ \
+  --accessed-on 2026-11-18 --dry-run
+```

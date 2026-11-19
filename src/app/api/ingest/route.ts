@@ -1,5 +1,5 @@
 import OpenAI from "openai";
-import { prepareReference, referenceMaxBytes } from "@/lib/rag/prepare-reference";
+import { prepareFileReference, referenceFileMaxBytes } from "@/lib/rag/extract-reference";
 import { ingestDocuments } from "@/lib/rag/ingest";
 import { getServerClients } from "@/lib/server/clients";
 
@@ -30,21 +30,21 @@ export async function POST(request: Request) {
       const { value, done } = await reader.read();
       if (done) break;
       size += value.length;
-      if (size > referenceMaxBytes + 16384) {
+      if (size > referenceFileMaxBytes + 16384) {
         await reader.cancel();
-        return reply({ error: "Upload bohat bara hai. File limit 128 KiB hai." }, 413);
+        return reply({ error: "Upload bohat bara hai. File limit 5 MiB hai." }, 413);
       }
       parts.push(value);
     }
-    let prepared: ReturnType<typeof prepareReference>;
+    let prepared: Awaited<ReturnType<typeof prepareFileReference>>;
     try {
       const form = await new Response(Buffer.concat(parts), {
         headers: { "Content-Type": request.headers.get("content-type")! },
       }).formData();
       const files = form.getAll("file");
-      if (files.length !== 1 || !(files[0] instanceof File)) throw new Error("Select one Markdown or text file.");
+      if (files.length !== 1 || !(files[0] instanceof File)) throw new Error("Select one PDF, Word, Markdown or text file.");
       const file = files[0];
-      prepared = prepareReference(file.name, new Uint8Array(await file.arrayBuffer()), {
+      prepared = await prepareFileReference(file.name, new Uint8Array(await file.arrayBuffer()), {
         title: String(form.get("title") ?? "").trim(),
         url: String(form.get("url") ?? "").trim(),
         accessedOn: String(form.get("accessedOn") ?? ""),

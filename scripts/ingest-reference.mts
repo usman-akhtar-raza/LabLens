@@ -1,6 +1,6 @@
 import { open } from "node:fs/promises";
 import { parseArgs } from "node:util";
-import { prepareReference, referenceMaxBytes as maxBytes } from "../src/lib/rag/prepare-reference.ts";
+import { prepareFileReference, referenceFileMaxBytes as maxBytes } from "../src/lib/rag/extract-reference.ts";
 import { createClients, reportFailure } from "./ai-runtime.mts";
 import { ingestDocuments } from "./ingest-documents.mts";
 
@@ -16,13 +16,13 @@ async function ingestReference() {
     },
   });
   if (!file || extra.length || !values.title?.trim() || !values.url || !values["accessed-on"]) {
-    throw new Error('Usage: npm run reference:ingest -- <file.md|file.txt> --title "Source title" --url <canonical MedlinePlus medical-test URL> --accessed-on YYYY-MM-DD [--topic <topic>] [--dry-run]');
+    throw new Error('Usage: npm run reference:ingest -- <file.pdf|file.doc|file.docx|file.md|file.txt> --title "Source title" --url <canonical MedlinePlus medical-test URL> --accessed-on YYYY-MM-DD [--topic <topic>] [--dry-run]');
   }
   const handle = await open(file, "r");
   let bytes: Uint8Array;
   try {
     const stat = await handle.stat();
-    if (!stat.isFile() || stat.size === 0 || stat.size > maxBytes) throw new Error("Provide a nonempty reference file up to 128 KiB");
+    if (!stat.isFile() || stat.size === 0 || stat.size > maxBytes) throw new Error("Provide a nonempty reference file up to 5 MiB");
     const buffer = Buffer.alloc(maxBytes + 1);
     const { bytesRead } = await handle.read({ buffer, length: buffer.length, position: 0 });
     if (bytesRead !== stat.size) throw new Error("Reference changed while reading. Retry with a stable file.");
@@ -30,7 +30,7 @@ async function ingestReference() {
   } finally {
     await handle.close();
   }
-  const { document, chunks } = prepareReference(file, bytes, {
+  const { document, chunks } = await prepareFileReference(file, bytes, {
     title: values.title, url: values.url, accessedOn: values["accessed-on"], topics: values.topic,
   });
 
